@@ -11,6 +11,7 @@
 |realname_rub|string|null: false|
 |birthday|string|null: false|
 |zip_code|string|null: false|
+|address|string|null: false|
 |tel|string||
 
 ### Association
@@ -26,8 +27,7 @@
 |------|----|-------|
 |card_number|integer|null: false|
 |validity|string|null: false|
-|code|integer|null: false|
-|user|refarences|foreign_key: true|
+|user|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -37,14 +37,14 @@
 |------|----|-------|
 |name|string|null: false, index: true|
 |explain|text|null: false|
-|category|refarences|foreign_key: true|
-|brand|refarences|foreign_key: true|
-|size|refarences|foreign_key: true|
-|condition|refarences|foreign_key: true|
-|postage|refarences|foreign_key: true|
-|region|refarences|foreign_key: true|
-|shopping_date|refarences|foreign_key: true|
-|user|refarences|foreign_key: true|
+|category|references|foreign_key: true|
+|brand|references|foreign_key: true|
+|size|references|foreign_key: true|
+|condition|references|foreign_key: true|
+|postage|references|foreign_key: true|
+|region|references|foreign_key: true|
+|shopping_date|references|foreign_key: true|
+|user|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -66,7 +66,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image_name|string|null: false|
-|item|refarences|foreign_key: true|
+|item|references|foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -123,8 +123,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user|refarences|foreign_key: true|
-|item|refarences|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -134,8 +134,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user|refarences|foreign_key: true|
-|item|refarences|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -145,7 +145,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |trade_state|string|null: false|
-|item|refarences|foreign_key: true|
+|item|references|foreign_key: true|
 |buyer_id|integer||
 
 ### Association
@@ -156,8 +156,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |nice|integer||
-|user|refarences|foreign_key: true|
-|item|refarences|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
