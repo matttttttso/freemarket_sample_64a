@@ -20,7 +20,7 @@
 - has_many :comments
 - has_many :messages
 - has_many :trade_status
-- has_many :nice
+- has_many :likes
 
 ## CreditCardテーブル
 |Column|Type|Options|
@@ -36,88 +36,24 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
+|price|integer|null: false|
+|images|string|null: false|
 |explain|text|null: false|
-|category|references|foreign_key: true|
-|brand|references|foreign_key: true|
-|size|references|foreign_key: true|
-|condition|references|foreign_key: true|
-|postage|references|foreign_key: true|
-|region|references|foreign_key: true|
-|shopping_date|references|foreign_key: true|
+|category|string|null: false|
+|brand|string|null: false|
+|size|string|null: false|
+|condition|string|null: false|
+|postage|string|null: false|
+|region|string|null: false|
+|shopping_date|string|null: false|
 |user|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :category
-- belongs_to :brand
-- belongs_to :size
-- belongs_to :condition
-- belongs_to :postage
-- belongs_to :region
-- belongs_to :shoppig_date
-- belongs_to :user
-- has_many   :images
 - has_many   :comments
 - has_many   :messages
-- has_many   :nice
+- has_many   :likes
 - has_one    :trade_state
-
-## Imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image_name|string|null: false|
-|item|references|foreign_key: true|
-
-### Association
-- belongs_to :item
-
-## Categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category|string|null: false|
-
-### Association
-- has_many :items
-
-## Brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|brand|string|null: false|
-
-### Association
-- has_many :items
-
-## Sizeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
-
-### Association
-- has_many :items
-
-## Conditionテーブル
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-
-### Association
-- has_many :items
-
-## Regionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|region|string|null: false|
-
-### Association
-- has_many :items
-
-## Shopping_datesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|shopping_date|string|null: false|
-
-### Association
-- has_many :items
 
 ## Commentsテーブル
 |Column|Type|Options|
@@ -152,10 +88,9 @@
 - belongs_to :item
 - belongs_to :user
 
-## Niceテーブル
+## Likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nice|integer||
 |user|references|foreign_key: true|
 |item|references|foreign_key: true|
 
