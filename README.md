@@ -10,12 +10,11 @@
 |realname|string|null: false|
 |realname_rub|string|null: false|
 |birthday|string|null: false|
-|zip_code|string|null: false|
-|address|string|null: false|
 |tel|string||
 
 ### Association
 - has_one  :creditcard
+- has_one  :address
 - has_many :items
 - has_many :comments
 - has_many :messages
@@ -32,12 +31,23 @@
 ### Association
 - belongs_to :user
 
+## Addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|zip_code|string|null: false|
+|prefectures｜string|null: false|
+|city|string|null: false|
+|street_number|string|null: false|
+|building_name|string||
+
+### Association
+- belongs_to :user
+
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
 |price|integer|null: false|
-|images|string|null: false|
 |explain|text|null: false|
 |category|string|null: false|
 |brand|string|null: false|
@@ -50,10 +60,20 @@
 
 ### Association
 - belongs_to :user
+- has_many   :images
 - has_many   :comments
 - has_many   :messages
 - has_many   :likes
 - has_one    :trade_state
+
+## Imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image_name|string|null: false|
+|item|references|foreign_key: true|
+
+### Association
+- belongs_to :item
 
 ## Commentsテーブル
 |Column|Type|Options|
