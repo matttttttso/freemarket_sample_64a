@@ -4,10 +4,24 @@
 
 a{
   text-decoration: none;
+  color: #333;
 }
 
 .wrapper{
   margin: 40px auto 0;
   width: 1020px;
   display: flex;
+  color: #333;
+}
+
+.bolb{
+  font-weight: 600;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }

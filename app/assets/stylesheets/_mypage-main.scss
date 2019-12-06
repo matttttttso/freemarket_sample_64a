@@ -1,0 +1,110 @@
+.mypage-main{
+  width: calc(100% - 300px);
+
+  &__user-icon{
+    background-color: #ff7f50;
+    position: relative;
+    height: 200px;
+    text-align: center;
+    font-size: 14px;
+
+    a{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+
+      i{
+        font-size: 56px;
+      }
+
+      h2{
+      margin: 8px 0 0;
+
+      }
+      .number{
+        margin: 8px 0 0;
+
+        p{
+          display: inline-block;
+
+          span{
+            margin: 0 0 0 8px;
+          }
+
+        }
+
+        p+p{
+          margin: 0 0 0 16px;
+        }
+      }
+    }
+  }
+  &__container{
+    height: 310px;
+    &__title{
+      margin: 40px 0 0;
+      padding: 0 16px;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+    }
+    
+    .tabs{
+      height: 74px;
+
+      // タブの切替を設定。無駄な記述が多いので今後JSでの実装を予定
+      input[name="tab-radio"] {
+        display: none;
+      }
+      #info:checked ~ .info, #todo:checked ~ .todo{
+        display: block;
+      }
+      input[name="tab-radio"]:checked + .tab-content {
+        background-color: #fff;
+        border-top: 2px solid #ea352d
+      }
+
+      input[name="tab-check"] {
+        display: none;
+      }
+      #trade:checked ~ .trade, #completion:checked ~ .completion{
+        display: block;
+      }
+      input[name="tab-check"]:checked + .tab-content {
+        background-color: #fff;
+        border-top: 2px solid #ea352d
+      }
+      // タブの切替ここまで
+
+      .tab-content{
+        background: #eee;
+        width: 50%;
+        float: left;
+        line-height: 74px;
+        text-align: center;
+      }
+      .clear-shadow{
+        @include clearfix();
+      }
+    }
+
+    &__content{
+      display: none;
+      height: 236px;
+      &__none{
+        padding: 160px 0 60px;
+        background-image: url("logo_gray.svg");
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 78px 85px;
+        text-align: center;
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
+  }
+}
