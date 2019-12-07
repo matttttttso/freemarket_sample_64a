@@ -2,11 +2,20 @@
   width: calc(100% - 300px);
 
   &__user-icon{
-    background-color: #ff7f50;
+    background: url('user-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     height: 200px;
     text-align: center;
     font-size: 14px;
+
+    img{
+      overflow: hidden;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
 
     a{
       display: block;
@@ -53,10 +62,10 @@
       line-height: 72px;
     }
     
+    // タブの切替を設定。無駄な記述が多いので今後JSでの実装を予定
     .tabs{
       height: 74px;
 
-      // タブの切替を設定。無駄な記述が多いので今後JSでの実装を予定
       input[name="tab-radio"] {
         display: none;
       }
@@ -78,7 +87,7 @@
         background-color: #fff;
         border-top: 2px solid #ea352d
       }
-      // タブの切替ここまで
+    // タブの切替ここまで
 
       .tab-content{
         background: #eee;
@@ -94,7 +103,7 @@
 
     &__content{
       display: none;
-      height: 236px;
+      background-color: #fff;
       &__none{
         padding: 160px 0 60px;
         background-image: url("logo_gray.svg");
