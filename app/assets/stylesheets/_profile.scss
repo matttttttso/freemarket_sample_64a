@@ -6,11 +6,12 @@
     @include user-bg();
     height: 156px;
     padding: 72px 16px 24px;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   
     img{
       @include icon();
-      display: inline-block;
     }
 
     &__text{
