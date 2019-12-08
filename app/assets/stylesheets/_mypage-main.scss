@@ -2,19 +2,13 @@
   width: calc(100% - 300px);
 
   &__user-icon{
-    background: url('user-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include user-bg();
     position: relative;
     height: 200px;
-    text-align: center;
     font-size: 14px;
 
     img{
-      overflow: hidden;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      @include icon();
     }
 
     a{
@@ -52,6 +46,7 @@
       }
     }
   }
+  
   &__container{
     height: 310px;
     &__title{

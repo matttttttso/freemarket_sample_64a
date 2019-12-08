@@ -1,0 +1,39 @@
+.input-box{
+  background-color: #fff;
+  text-align: center;
+
+  &__setting-icon{
+    @include user-bg();
+    height: 156px;
+    padding: 72px 16px 24px;
+    vertical-align: middle;
+  
+    img{
+      @include icon();
+      display: inline-block;
+    }
+
+    &__text{
+      width: 220px;
+      @include input-default();
+    }
+  }
+
+  &__profile{
+    padding: 40px 16px;
+
+    .submit-btn{
+      margin: 16px 0 0;
+      @include submit();
+      @include submit-red();
+    }
+
+    &__area{
+      display: block;
+      height: 216px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  }
+}
