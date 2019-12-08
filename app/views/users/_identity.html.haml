@@ -1,0 +1,35 @@
+.mypage-main
+  %h2.chapter-head.bolb
+    本人情報の登録
+  %form.contents
+    %p
+      お客さまの本人情報をご登録ください。
+      %br
+      登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+    %p.text-right
+      = link_to "#" do
+        本人確認書類のアップロードについて
+        = icon 'fas', 'chevron-right'
+    .contents__content
+      %label.bolb
+        お名前
+      %p
+        メルカリ花子
+    .contents__content
+      %label.bolb
+        お名前カナ
+      %p
+        メルカリハナコ
+    .contents__content
+      %label.bolb
+        生年月日
+      %p
+        YYYY/MM/DD
+    .contents__content
+      %label.bolb
+        郵便番号
+      %input{name: "zip-code", type: "text_field", placeholder: "例)1234567", class: "contents__content__text"}
+    .contents__content
+      %label.bolb
+        都道府県
+      %input{name: "zip-code", type: "text_field", placeholder: "例)1234567", class: "contents__content__text"}
