@@ -3,6 +3,10 @@
   padding: 64px;
   font-size: 14px;
 
+  a{
+    color: #0099e8;
+  }
+
   p{
     margin: 8px 0 0;
   }
@@ -15,5 +19,26 @@
       width: 100%;
       margin: 8px 0 0;
     }
+    .select-wrap{
+
+      &__select{
+        @include select-default();
+        width: 100%;
+      }
+
+      i{
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        color: #888;
+        font-size: 8px;
+      }
+    }
+  }
+
+  .submit-btn{
+    margin: 40px 0;
+    @include submit();
+    @include submit-red();
   }
 }
