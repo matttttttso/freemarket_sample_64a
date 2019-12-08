@@ -33,8 +33,10 @@
       %label.bolb
         都道府県
       .select-wrap
-        %select{name: "prefecture", class: "select-wrap__select"}
         = icon 'fas', 'chevron-down'
+        %select{name: "prefecture", class: "select-wrap__select"}
+          %option --
+          %option 北海道
     .contents__content
       %label.bolb
         市区町村

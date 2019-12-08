@@ -20,18 +20,22 @@
       margin: 8px 0 0;
     }
     .select-wrap{
-
-      &__select{
-        @include select-default();
-        width: 100%;
-      }
+      position: relative;
 
       i{
+        display: inline-block;
         position: absolute;
         right: 16px;
         top: 50%;
         color: #888;
-        font-size: 8px;
+      }
+
+      &__select{
+        @include select-default();
+        width: 100%;
+        outline: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
       }
     }
   }
