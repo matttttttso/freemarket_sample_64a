@@ -1,0 +1,57 @@
+//コンテンツ部分 スライドショーから ※※※※※※//
+.slide-show {
+  width: 1800px; /* スライドショーの幅 */
+  max-width: 100%; /* スマホで表示が欠けないように */
+  margin: 10px auto; /* 中央揃え */
+  position: relative;
+}
+
+.slide-show img { 
+  animation: show 12s infinite; /* 12秒のスライドショーを繰り返し */
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  position: absolute; /* 画像を重ねて表示 */
+  left: 0;
+  top: 0;
+}
+
+@keyframes show {
+  0% {opacity: 0}
+  17% {opacity: 1}
+  33% {opacity: 1}
+  50% {opacity: 0}
+}
+
+.slide-show img:nth-of-type(1) {
+  position: relative;
+}
+
+.slide-show img:nth-of-type(2) {
+  animation-delay: 0s;
+}
+
+.slide-show img:nth-of-type(3) {
+  animation-delay: 4s;
+}
+
+.slide-show img:nth-of-type(4) {
+  animation-delay: 8s;
+}
+
+//スライドショーCSSここまで
+
+
+
+
+
+
+
+
+//フッターの上にある、変な画像
+.on-footer-image{
+  background-position:center;
+  background-size: cover;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+}
