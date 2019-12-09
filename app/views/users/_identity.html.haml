@@ -1,7 +1,7 @@
 .mypage-main
   %h2.chapter-head.bolb
     本人情報の登録
-  %form.contents
+  %form.single-contents
     %p
       お客さまの本人情報をご登録ください。
       %br
@@ -10,28 +10,28 @@
       = link_to "#" do
         本人確認書類のアップロードについて
         = icon 'fas', 'chevron-right'
-    .contents__content
+    .single-contents__content
       %label.bolb
         お名前
       %p
         メルカリ花子
-    .contents__content
+    .single-contents__content
       %label.bolb
         お名前カナ
       %p
         メルカリハナコ
-    .contents__content
+    .single-contents__content
       %label.bolb
         生年月日
       %p
         YYYY/MM/DD
-    .contents__content
+    .single-contents__content
       %label.bolb
         郵便番号
       %span.form-arbitrary
         任意
-      %input{name: "zip-code", type: "text_field", placeholder: "例) 1234567", class: "contents__content__text"}
-    .contents__content
+      %input{name: "zip-code", type: "text_field", placeholder: "例) 1234567", class: "single-contents__content__text"}
+    .single-contents__content
       %label.bolb
         都道府県
       %span.form-arbitrary
@@ -41,25 +41,25 @@
         %select{name: "prefecture", class: "select-wrap__select"}
           %option --
           %option 北海道
-           // active_hashの利用はコンフリクトの発生を考慮して出品ページの完了後に実装
-    .contents__content
+          // active_hashの利用はコンフリクトの発生を考慮して出品ページの完了後に実装
+    .single-contents__content
       %label.bolb
         市区町村
       %span.form-arbitrary
         任意
-      %input{name: "city", type: "text_field", placeholder: "例) 横浜市緑区", class: "contents__content__text"}
-    .contents__content
+      %input{name: "city", type: "text_field", placeholder: "例) 横浜市緑区", class: "single-contents__content__text"}
+    .single-contents__content
       %label.bolb
         番地
       %span.form-arbitrary
         任意
-      %input{name: "address1", type: "text_field", placeholder: "例) 青山1−1−1", class: "contents__content__text"}
-    .contents__content
+      %input{name: "address1", type: "text_field", placeholder: "例) 青山1−1−1", class: "single-contents__content__text"}
+    .single-contents__content
       %label.bolb
         建物名
       %span.form-arbitrary
         任意
-      %input{name: "address2", type: "text_field", placeholder: "例) 柳ビル103", class: "contents__content__text"}
+      %input{name: "address2", type: "text_field", placeholder: "例) 柳ビル103", class: "single-contents__content__text"}
     %input{type: "submit", value: "登録する", class: "submit-btn"}
     %p.text-right
       = link_to "#" do
