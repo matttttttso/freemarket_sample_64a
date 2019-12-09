@@ -23,3 +23,23 @@
     }
   }
 }
+
+.registration-footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  font-size: 12px;
+  text-align: center;
+
+  ul{
+    margin: 0 0 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img{
+    height: 65px;
+    width: 80px;
+  }
+}
