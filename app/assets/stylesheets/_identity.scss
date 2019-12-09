@@ -1,0 +1,48 @@
+.single-contents{
+  background-color: #fff;
+  padding: 64px;
+  font-size: 14px;
+
+  a{
+    color: #0099e8;
+  }
+
+  p{
+    margin: 8px 0 0;
+  }
+
+  &__content{
+    margin: 40px 0 0;
+
+    &__text{
+      @include input-default();
+      width: 100%;
+      margin: 8px 0 0;
+    }
+    .select-wrap{
+      position: relative;
+
+      i{
+        display: inline-block;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        color: #888;
+      }
+
+      &__select{
+        @include select-default();
+        width: 100%;
+        outline: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+    }
+  }
+
+  .submit-btn{
+    margin: 40px 0;
+    @include submit();
+    @include submit-red();
+  }
+}
