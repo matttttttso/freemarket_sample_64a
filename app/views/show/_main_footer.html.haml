@@ -16,39 +16,39 @@
         
       %ul.social-link
         %li.footer-social-link-twitter
-          = link_to "#" do
-            %i.fab.fa-twitter.fa-lg.my-white
-        //フォントオーサム表示されないあとで処理
+          = link_to image_tag("twittericon.png"),'https://twitter.com/'
+
         %li.footer-social-link-facebook
-          = link_to "#" do
-            %i.fab.fa-facebook-square.fa-lg.my-white
-        //フォントオーサム表示されないあとで処理
+          = link_to image_tag('facebookicon.png'), 'https://www.facebook.com/'
+
+
 
 
     .footer-cell2
-      %h2.footer-head ヘルプガイド
-      %ul 
-        %li
-          = link_to 'メルカリガイド', '#'
-        %li
-          = link_to 'らくらくメルカリ便', '#'
-        %li
-          = link_to 'ゆうゆうメルカリ便', '#'
-        %li
-          = link_to '大型メルカリ便', '#'
-        %li
-          = link_to '車体取引ガイド', '#'
-        %li
-          = link_to 'メルカリあんしん・あんぜん宣言！', '#'
-        %li
-          = link_to '偽ブランド品撲滅への取り組み', '#'
-        %li
-          = link_to 'メルカリボックス', '#'
+      %h2.footer-head
+        ヘルプガイド
+        %ul 
+          %li
+            = link_to 'メルカリガイド', '#'
+          %li
+            = link_to 'らくらくメルカリ便', '#'
+          %li
+            = link_to 'ゆうゆうメルカリ便', '#'
+          %li
+            = link_to '大型メルカリ便', '#'
+          %li
+            = link_to '車体取引ガイド', '#'
+          %li
+            = link_to 'メルカリあんしん・あんぜん宣言！', '#'
+          %li
+            = link_to '偽ブランド品撲滅への取り組み', '#'
+          %li
+            = link_to 'メルカリボックス', '#'
 
 
     .footer-cell3
-      %h2.footer-head プライバシーと利用規約
-      .inner-footer-cell
+      %h2.footer-head
+        プライバシーと利用規約
         %ul
           %li
           = link_to 'プライバシーポリシー', '#'
@@ -59,8 +59,7 @@
           %li
           = link_to 'コンプライアンスポリシー', '#'
 
-
-      .footer-cell3__inner-footer-cell
+      .inner-footer-cell
         %ul
           %li
           = link_to '個人データの安全管理に係る基本方針', '#'
@@ -81,10 +80,10 @@
         = link_to 'United States', '#'
 
 
-    .footer-bottom
-      .footer-bottom-logo
-        = link_to image_tag('mercari-logo-white.svg'), '#'
-      .footer-bottom__copyright © Mercari, Inc.
+  .footer-bottom
+    .footer-bottom-logo
+      = link_to image_tag('mercari-logo-white.svg'), '#'
+    .footer-bottom__copyright © Mercari, Inc.
 
 
 
