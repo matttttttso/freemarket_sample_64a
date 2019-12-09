@@ -28,26 +28,37 @@
     .contents__content
       %label.bolb
         郵便番号
+      %span.form-arbitrary
+        任意
       %input{name: "zip-code", type: "text_field", placeholder: "例) 1234567", class: "contents__content__text"}
     .contents__content
       %label.bolb
         都道府県
+      %span.form-arbitrary
+        任意
       .select-wrap
         = icon 'fas', 'chevron-down'
         %select{name: "prefecture", class: "select-wrap__select"}
           %option --
           %option 北海道
+           // active_hashの利用はコンフリクトの発生を考慮して出品ページの完了後に実装
     .contents__content
       %label.bolb
         市区町村
+      %span.form-arbitrary
+        任意
       %input{name: "city", type: "text_field", placeholder: "例) 横浜市緑区", class: "contents__content__text"}
     .contents__content
       %label.bolb
         番地
+      %span.form-arbitrary
+        任意
       %input{name: "address1", type: "text_field", placeholder: "例) 青山1−1−1", class: "contents__content__text"}
     .contents__content
       %label.bolb
         建物名
+      %span.form-arbitrary
+        任意
       %input{name: "address2", type: "text_field", placeholder: "例) 柳ビル103", class: "contents__content__text"}
     %input{type: "submit", value: "登録する", class: "submit-btn"}
     %p.text-right
