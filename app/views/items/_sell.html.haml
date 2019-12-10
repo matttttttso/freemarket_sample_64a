@@ -63,3 +63,40 @@
             %option 新品、未使用
             %option 未使用に近い
 
+    .sell-main__form__content.space-between
+      %h3.sell-main__form__content__head.bolb
+        配送について
+        %span.form-question
+          ?
+      .sell-main__form__content__right
+        .sell-main__form__content__form-label--first
+          %label.bolb
+            配送料の負担
+          %span.form-require
+            必須
+        .sell-main__form__content__form
+          %select{name: "burden", class: "sell-main__form__content__select"}
+            %option --
+            %option 送料込み(出品者負担)
+            %option 着払い(購入者負担)
+        .sell-main__form__content__form-label
+          %label.bolb
+            発送元の地域
+          %span.form-require
+            必須
+        .sell-main__form__content__box
+          %select{name: "prefecture", class: "sell-main__form__content__select"}
+            %option --
+            %option 北海道
+            %option 青森県
+        .sell-main__form__content__form-label
+          %label.bolb
+            発送までの日数
+          %span.form-require
+            必須
+        .sell-main__form__content__box
+          %select{name: "days", class: "sell-main__form__content__select"}
+            %option --
+            %option 1~2日で発送
+            %option 2~3日で発送
+            %option 4~7日で発送
