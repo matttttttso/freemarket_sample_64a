@@ -49,6 +49,10 @@ body{
   text-align: right;
 }
 
+.text-center{
+  text-align: center;
+}
+
 @mixin clearfix() {
   &:after {
     content: '';
@@ -87,9 +91,9 @@ body{
   background-size: cover;
 }
 
-@mixin input-default(){
+@mixin input-default($length){
   height: 48px;
-  width: 100%;
+  width: $length;
   margin: 8px 0 0;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -97,9 +101,9 @@ body{
   background: #fff;
 }
 
-@mixin select-default(){
-  position: relative;
+@mixin select-default($length){
   height: 48px;
+  width: $length;
   margin: 8px 0 0;
   padding: 0 16px;
   border-radius: 4px;
@@ -108,17 +112,27 @@ body{
   font-size: 16px;
 }
 
-@mixin formneed(){
+@mixin form-need($color){
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
+  background-color: $color;
   color: #fff;
   font-size: 12px;
   vertical-align: top;
 }
 
 .input-text-field{
-  @include input-default();
+  @include input-default(100%);
+}
+
+.input-text-field-herf:first-of-type{
+  @include input-default(calc(50% - 6px));
+  margin-right: 6px;
+}
+
+.input-text-field-herf{
+  @include input-default(calc(50% - 6px));
 }
 
 .select-wrap{
@@ -131,12 +145,16 @@ body{
     top: 50%;
     color: #888;
   }
+}
 
-  &__select{
-    @include select-default();
-    width: 100%;
-    outline: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
+.select{
+  @include select-default(100%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select-division{
+  @include select-default(76px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }

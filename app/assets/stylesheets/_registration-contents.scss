@@ -14,12 +14,36 @@
     &__content{
       width: 343px;
       margin: 32px auto 0;
+
+      &__info-text{
+        margin: 8px 0 0;
+        color: #888;
+      }
+
+      &__sub-head{
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+
+      &__birthday{
+        width: 343px;
+        display: flex;
+
+        span{
+          margin: 0 2px;
+          line-height: 48px;
+        }
+      }
     }
 
     .form-necessary{
-      @include formneed();
-      background-color: #ea352d;
+      @include form-need(#ea352d);
     }
 
+    .submit-btn{
+      margin: 32px 0;
+      @include submit();
+      @include submit-red();
+    }
   }
 }

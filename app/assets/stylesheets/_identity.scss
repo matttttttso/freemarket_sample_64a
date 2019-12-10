@@ -15,8 +15,7 @@
     margin: 40px 0 0;
 
     .form-arbitrary{
-      @include formneed();
-      background-color: #ccc;
+      @include form-need(#ccc);
     }
 
   }
