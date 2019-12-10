@@ -41,7 +41,7 @@
     }
 
     .submit-btn{
-      margin: 32px 0;
+      margin: 32px 0 0;
       @include submit();
       @include submit-red();
     }
