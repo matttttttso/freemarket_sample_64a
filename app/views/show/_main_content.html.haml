@@ -1,22 +1,41 @@
 .main-content
-  .main-content-text-area
+  .main-content__text-area
     .main-slide-show
+      = link_to image_tag('top-banner1.jpg'), '#'
       //コンテンツ部分 スライドショーから
       .main-slide-show-list
-        %img{src: "top-banner1.jpg"}
-        %img{src: "top-banner2.jpg"}
-        %img{src: "top-banner4.jpg"}
+        -# %img{src: "top-banner1.jpg"}
+        -# %img{src: "top-banner2.jpg"}
+        -# %img{src: "top-banner4.jpg"}
     //いいね！した商品一覧
     .main-like-product
-      .main-like-product-top
+      .main-like-product__top
         .h3.main-like-product-top-message いいね！した商品
-        .main-like-product-all-link すべて見る
+        .main-like-product-all-link
+          = link_to "すべて見る","#"
       .main-like-bottom-product
         .main-like-bottom-product-image
-          .main-like-bottom-product-image-price
+          = link_to image_tag('likeimage1.jpg'), '#'
+          .main-like-bottom-product-image__price  ¥1,000
+        .main-like-bottom-product-image__text ランプ
+
+        .main-like-bottom-product-image
+          = link_to image_tag('likeimage1.jpg'), '#'
+          .main-like-bottom-product-image__price ¥1,000
+        .main-like-bottom-product-image__text ランプ
+
+        .main-like-bottom-product-image
+          = link_to image_tag('mercarineko.jpg'), '#'
+          .main-like-bottom-product-image__price ¥1,000,000
+        
+        .main-like-bottom-product-image
+          = link_to image_tag('mercarineko.jpg'), '#'
+          .main-like-bottom-product-image__price ¥1,000,000
+
 
     .main-popular-category-area
-      .main-popular-category-area-message 人気のカテゴリー
+      .main-popular-category-area-message
+        人気のカテゴリー
       .main-popular-category-area-tag
         %ul
           %li レディース
@@ -25,121 +44,64 @@
           %li おもちゃ・ホビー・グッズ
     
     .ladies-new-items
-      .ladies-new-item-area
-        .ladies-new-item-top
-          .ladies-new-item-top-text レディース新着アイテム
-          .ladies-new-item-top-text もっと見る
+      .popular-new-item-area
+        .popular-new-item-top
+          .ladies-new-item-top-left-text
+            レディース新着アイテム
+          .ladies-new-item-top-right-text
+            = link_to "もっと見る","#"
+
         .ladies-new-item-product
-          %ul
-            %li
-            %li
-            %li
-            %li
-            %li
+          %ul.ladies-new-item-product-list
+            %li.ladies-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+              .ladies-new-item-product-image__price  ¥1,000
+              .ladies-new-item-product-image__text ランプ
+
+            %li.ladies-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+              .ladies-new-item-product-image__price  ¥1,000
+              .ladies-new-item-product-image__text ランプ
+
+            %li.ladies-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+              .ladies-new-item-product-image__price  ¥1,000
+              .ladies-new-item-product-image__text ランプ
+
+            %li.ladies-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+              .ladies-new-item-product-image__price  ¥1,000
+              .ladies-new-item-product-image__text ランプ
 
 
     .mens-new-items
       .mens-new-item-area
         .mens-new-item-top
-          .mens-new-item-top-text メンズ新着アイテム
-          .mens-new-item-top-text もっと見る
+          .mens-new-item-top-left-text
+            メンズ新着アイテム
+          .mens-new-item-top-right-text
+            = link_to "もっと見る","#"
         .mens-new-item-product
-          %ul
-            %li
-            %li
-            %li
-            %li
-            %li
-
-    .electrical-new-items
-      .electrical-new-item-area
-        .electrical-new-item-top
-          .electrical-new-item-top-text 家電・スマホ・カメラ新着アイテム
-          .electrical-new-item-top-text もっと見る
-        .electrical-new-item-product
-          %ul
-            %li
-            %li
-            %li
-            %li
-            %li
-
-        
-    .hobby-new-items
-      .hobby-new-item-area
-        .hobby-new-item-top
-          .hobby-new-item-top-text おもちゃ・ホビーグッズ新着アイテム
-          .hobby-new-item-top-text もっと見る
-        .hobby-new-item-product
-          %ul
-            %li
-            %li
-            %li
-            %li
-            %li
-
-    .main-popular-brand-area
-          .main-popular-brand-area-message 人気のブランド
-          .main-popular-brand-area-tag
-            %ul
-              %li シャネル
-              %li ルイヴィトン
-              %li シュプリーム
-              %li ナイキ
-
-    .channel-new-items
-      .channel-new-item-area
-        .channel-new-item-top
-          .channel-new-item-top-text シャネル新着アイテム
-          .channel-new-item-top-text もっと見る
-        .channel-new-item-product
-          %ul
-            %li
-            %li
-            %li
-            %li
-            %li
-
-      .vuitton-new-items
-        .vuitton-new-item-area
-          .vuitton-new-item-top
-            .vuitton-new-item-top-text ルイヴィトン新着アイテム
-            .vuitton-new-item-top-text もっと見る
-          .vuitton-new-item-product
-            %ul
-              %li
-              %li
-              %li
-              %li
-              %li
-
-      .supreme-new-items
-        .supreme-new-item-area
-          .supreme-new-item-top
-            .supreme-new-item-top-text シュプリーム新着アイテム
-            .supreme-new-item-top-text もっと見る
-          .supreme-new-item-product
-            %ul
-              %li
-              %li
-              %li
-              %li
-              %li
-
-      .nike-new-items
-        .nike-new-item-area
-          .nike-new-item-top
-            .nike-new-item-top-text ナイキ新着アイテム
-            .nike-new-item-top-text もっと見る
-          .nike-new-item-product
-            %ul
-              %li
-              %li
-              %li
-              %li
-              %li
+          %ul.mens-new-item-product-list
+            %li.mens-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+            %li.mens-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+            %li.mens-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
+            %li.mens-new-item-product-list-item
+              = link_to image_tag('mercarineko.jpg'), '#'
 
 
-  .on-footer-image
-    = image_tag "footer1.jpg"
-  //ここにあとで、イメージを重ねて表示させる
+.on-footer-image
+  = image_tag "footer1.jpg"
+  .on-footer-image-app
+    .on-footer-image-top-text スマホで簡単フリマアプリ
+    .on-footer-image-bottom-text 今すぐ無料ダウンロード
+    .on-footer-image-app-group
+      .on-footer-image-mercari-logo
+        = image_tag "mercari-logo-white.svg"
+      .on-footer-image-app-logo
+        = image_tag "appstore.svg"
+      .on-footer-image-google-logo
+        = image_tag "googleplay.svg"
