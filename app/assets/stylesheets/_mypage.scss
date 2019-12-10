@@ -37,18 +37,16 @@ body{
   text-align: center;
 }
 
-.text-right{
-  text-align: right;
+.single-head{
+  background-color: #fff;
+  font-size: 22px;
+  padding: 32px;
+  border-bottom: 1px solid #f5f5f5;
+  text-align: center;
 }
 
-.form-arbitrary {
-  background: #ccc;
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  vertical-align: top;
+.text-right{
+  text-align: right;
 }
 
 @mixin clearfix() {
@@ -91,7 +89,8 @@ body{
 
 @mixin input-default(){
   height: 48px;
-  margin: 0 0 0 8px;
+  width: 100%;
+  margin: 8px 0 0;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -101,9 +100,43 @@ body{
 @mixin select-default(){
   position: relative;
   height: 48px;
+  margin: 8px 0 0;
   padding: 0 16px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: 0;
   font-size: 16px;
+}
+
+@mixin form-need(){
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.input-text-field{
+  @include input-default();
+}
+
+.select-wrap{
+  position: relative;
+
+  i{
+    display: inline-block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    color: #888;
+  }
+
+  &__select{
+    @include select-default();
+    width: 100%;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
 }
