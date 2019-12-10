@@ -13,11 +13,6 @@
 
   &__content{
     margin: 40px 0 0;
-
-    .form-arbitrary{
-      @include form-need(#ccc);
-    }
-
   }
 
   .submit-btn{

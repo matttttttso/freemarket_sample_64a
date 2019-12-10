@@ -41,10 +41,6 @@
       }
     }
 
-    .form-necessary{
-      @include form-need(#ea352d);
-    }
-
     .submit-btn{
       margin: 32px 0 0;
       @include submit();
