@@ -22,3 +22,19 @@
           またはクリックしてファイルをアップロード
         .sell-main__form__upload__box__images
 
+    .sell-main__form__content
+      .sell-main__form__content__box-label--first
+        %label.bolb
+          商品名
+        %span.form-require
+          必須
+      .sell-main__form__content__box
+        %input{name: "item-name", type: "text_field", placeholder: "商品名（必須 40文字まで)", class: "sell-main__form__content__text-field"}
+      .sell-main__form__content__box-label
+        %label.bolb
+          商品の説明
+        %span.form-require
+          必須
+      .sell-main__form__content__box
+        %textarea{name: "item-description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "sell-main__form__content__text-area"}
+
