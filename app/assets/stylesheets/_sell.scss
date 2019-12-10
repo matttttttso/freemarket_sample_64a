@@ -1,3 +1,32 @@
+// 次のコメントアウトまで繰り返し使いたいやつ
+.form-require {
+background: #ea352d;
+margin: 0 0 0 8px;
+padding: 2px 4px;
+border-radius: 2px;
+color: #fff;
+font-size: 12px;
+vertical-align: top;
+}
+
+.form-question {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+  }
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
+}
+// ここまで繰り返し使いたいやつ
+
 .logo-header{
   display: flex;
   align-items: center;
@@ -21,5 +50,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  &__form{
+    margin: 0 auto;
+    width: 700px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    &__upload{
+      padding: 40px;
+      border-bottom: 1px solid #eee;
+      p{
+        margin: 8px 0 24px 0;
+        font-size: 14px;
+      }
+      &__head{
+        display: inline-block;
+      }
+      &__box{
+        background-color: #eee;
+        border: 1px dashed #ccc;
+        padding: 40px;
+        text-align: center;
+        min-height: 162px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__text{
+          left: 16px;
+          right: 16px;
+          text-align: center;
+          line-height: 1.5;
+        }
+      }
+    }
   }
 }
