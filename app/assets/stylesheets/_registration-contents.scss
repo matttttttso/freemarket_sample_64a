@@ -1,0 +1,25 @@
+.registration-contents{
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .registration-form{
+    padding: 0 40px 64px;
+    font-size: 14px;
+
+    a{
+      color: #0099e8;
+    }
+
+    &__content{
+      width: 343px;
+      margin: 32px auto 0;
+    }
+
+    .form-necessary{
+      @include form-need();
+      background-color: #ea352d;
+    }
+
+  }
+}
