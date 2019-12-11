@@ -2,26 +2,34 @@
   box-sizing: border-box;
 }
 
-
 .main-content{
   max-width: 1400px;
   padding: 0px;
-  width: 100%;
   margin: 0px auto;
   box-sizing: border-box;
+  
+  
 
   &__text-area{
     position: relative;
     box-sizing: border-box;
   }
-
-//コンテンツ部分 スライドショーから ※※※※※※//
-.main-slide-show{
-  height: 390px;
-  position: relative;
-  top: 0px;
-  width: 100vw;
 }
+//コンテンツ部分 スライドショーから ※※※※※※//
+  .main-slide-show{
+    height: 390px;
+    position: relative;
+    top: 0px;
+    width: 100vw;
+    position: relative;
+    left: 49%;
+    transform: translateX(-50%);
+    background-color: #ddd;
+  }
+  .main-content img{
+    width: 100%;
+    height: 100%;
+  }
 
     //.main-slide-show-list←余裕あったらこいつにスライドあてる
 //スライドショーCSSここまで、一旦仮置きで画像だけ
@@ -109,7 +117,7 @@
             }
           }
           .main-like-bottom-product-image__text{
-            bottom: 0px;
+            bottom: -10px;
             position: absolute;
             margin-left:15px;
             object-fit: cover;
@@ -261,7 +269,7 @@
                 letter-spacing: .02em;
               }
             .ladies-new-item-product-image__text{
-              bottom: -10px;
+              bottom: -20px;
               position: absolute;
               margin-left:15px;
               object-fit: cover;
@@ -324,52 +332,123 @@
                 }
               }
             }
-  
-}
 
 
 
 //フッターの上にある、変な画像
 .on-footer-image{
+  background-size:contain;
   background-position:center;
-  background-size: cover;
   box-sizing: border-box;
   color: rgb(255, 255, 255);
-  outline: 1px solid #3a87ad !important;
-}
-  .on-footer-image-app{
+  position: relative;
+  
+  height: 260px;
+  flex-wrap: wrap;
+  img{
     display: flex;
-    flex-direction: column;
+    float: left;
+    background-size:contain;
+    text-align: center;
+    width: 100%;
+  }
+  
+
+  &__app{
+    display: inline-block;
     -webkit-box-pack: center;
     justify-content: center;
-    outline: 1px solid #3a87ad !important;
-  }
+    position: absolute;
+    left: 30%;
+    height: 20vh;
+    width: 10vw;
 
-  .on-footer-image-top-text{
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 15px;
+  
+
+    &__top-text{
+      color: rgb(255, 255, 255);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      height: 30vh;
+      width: 20vw;
+      display: inline-block;
+    }
+    &__bottom-text{
+      color: rgb(255, 255, 255);
+      height: 100%;
+      width: 100%;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    &__app-group{
+      display: inline-block;
+      height: 30vh;
+      width: 20vw;
+      display: flex;
+    
+      &__mercari-logo{
+        height: 30vh;
+        width: 20vw;
+        margin-right: 20px;
+       
+        vertical-align: middle;
+      }
+      &__google-logo{
+        height: 30vh;
+        width: 20vw;
+      
+        img{
+          vertical-align: middle;
+          background-size:contain;
+          display: inline-block;
+        }
+      }
+    }
   }
-  .on-footer-image-bottom-text{
-    color: rgb(255, 255, 255);
-    font-size: 35px;
-    margin-bottom: 20px;
-    outline: 1px solid #3a87ad !important;
+  &__mercari-app-image{
+    height: 30vh;
+    width: 20vw;
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+  
+    img{
+      position: absolute;
+      float: left;
+      background-size: contain;
+      max-block-size: -webkit-fill-available;
+    }
   }
-  .on-footer-image-app-group{
-    outline: 1px solid #3a87ad !important;
-  }
-  .on-footer-image-mercari-logo{
-    height: 68px;
-    margin-right: 20px;
-    width: 68px;
-    vertical-align: middle;
 }
-  .on-footer-image-google-logo{
-    height: 40px;
-    width: 144px;
+
+.top-seller-btn{
+  position: fixed;
+  right: -14px;
+  bottom: -14px;
+  text-align: center;
+  z-index: 2;
+
+  a{
+    text-decoration: none;
+    display: block;
   }
-  img{
-    vertical-align: middle;
+  .top-seller-btn-link{
+    padding-top: 15px;
+    font-size: 35px;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(234, 53, 45);
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    margin-right: 70px;
+    margin-bottom: 70px;
+
+
+    a{
+      cursor: pointer;
+      display: block;
+    }
   }
+}

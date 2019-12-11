@@ -95,13 +95,21 @@
 
 .on-footer-image
   = image_tag "footer1.jpg"
-  .on-footer-image-app
-    .on-footer-image-top-text スマホで簡単フリマアプリ
-    .on-footer-image-bottom-text 今すぐ無料ダウンロード
-    .on-footer-image-app-group
+  .on-footer-image__app
+    .on-footer-image__top-text スマホで簡単フリマアプリ
+    .on-footer-image__bottom-text 今すぐ無料ダウンロード
+    .on-footer-image__app-group
       .on-footer-image-mercari-logo
         = image_tag "mercari-logo-white.svg"
       .on-footer-image-app-logo
         = image_tag "appstore.svg"
-      .on-footer-image-google-logo
+      .on-footer-image__google-logo
         = image_tag "googleplay.svg"
+  .on-footer-image__mercari-app-image
+    = image_tag "download-app.png"
+
+.top-seller-btn
+  = link_to '#', class:"top-seller-btn-link" do
+    出品
+    %br
+    = image_tag('camera2.png')
