@@ -1,51 +1,20 @@
-*{
-  box-sizing: border-box;
-  background-repeat: no-repeat;
-  margin: 0;
-}
-
-.logout-mainbox{
-  width: 700px;
-  height:178.46px;
-  font: 14px;
-  background:#FFF;
-  position: relative;
- 
- 
-  &_inner{
-  width: 700px;
-  height:178.46px;
-  font: 14px;
-  background:#FFF;
-  padding: 64px;
-  position: relative;
-  min-height: 100%;
-  // background: #f5f5f5;
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  // border-top: 1px solid #f5f5f5;
- }
-}
- 
-
 .logout-submit{
-   margin: 64px 0 0;
-  //  @include submit();
-  //  @include submit-red();
-
-
-  &__red{
-    // display: block;
-    width: 320px;
-    height: 49.49px;
-    font-size: 14px;
-    // border: 1px solid transparent;
-    // text-align: center;
-    background: #ea352d;
-    // border: 1px solid #fff;
-    color: #fff;
-    margin-left: 190px;
-    border-style: solid;
-    border-width: 0;
-
+  width: 700px;
+  height:178.46px;
+  padding: 64px;
+  background:#FFF;
+  &__bar{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__red{
+      width: 320px;
+      height: 49.49px;
+      font-size: 14px;
+      background: #ea352d;
+      color: #fff;
+      border-style: solid;
+      border-width: 0;
+    }
   }
 }
