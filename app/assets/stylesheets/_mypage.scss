@@ -121,13 +121,13 @@ body{
   @include input-default(100%);
 }
 
+.input-text-field-herf{
+  @include input-default(calc(50% - 6px));
+}
+
 .input-text-field-herf:first-of-type{
   @include input-default(calc(50% - 6px));
   margin-right: 6px;
-}
-
-.input-text-field-herf{
-  @include input-default(calc(50% - 6px));
 }
 
 // formのselectボックス
