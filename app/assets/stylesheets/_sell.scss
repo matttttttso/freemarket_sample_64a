@@ -193,3 +193,30 @@ vertical-align: top;
     }
   }
 }
+
+.footer-simple{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  a{
+    font-size: 12px;
+  }
+  &__list{
+    &__margin{
+      margin: 0 0 0 16px;
+    }
+  }
+  &__img{
+    width: 80px;
+    height: 65px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 40px auto 0;
+  }
+  &__copyright{
+    font-size: 13px;
+    margin: 8px 0 0;
+  }
+}

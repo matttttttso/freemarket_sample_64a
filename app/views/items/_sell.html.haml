@@ -140,3 +140,17 @@
           %input{type: "submit", value: "出品する", class: "submit-btn__go"}
         .sell-main__form__content__box__images
           %input{type: "submit", value: "もどる", class: "submit-btn__back"}
+
+.footer-simple
+  .footer-simple__list
+    %a
+      プライバシーポリシー
+    %a.footer-simple__list__margin
+      メルカリ利用規約
+    %a.footer-simple__list__margin
+      特定商取引に関する表記
+  .footer-simple__img
+    = link_to "#" do
+      = image_tag 'logo_gray.svg'
+  .footer-simple__copyright
+    &copy; Fmarket, Inc.
