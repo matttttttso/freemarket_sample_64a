@@ -1,0 +1,228 @@
+// 次のコメントアウトまで繰り返し使いたいやつ
+.form-require {
+background: #ea352d;
+margin: 0 0 0 8px;
+padding: 2px 4px;
+border-radius: 2px;
+color: #fff;
+font-size: 12px;
+vertical-align: top;
+}
+
+.form-question {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin submit-gray(){
+  background: #aaaaaa;
+  border: 1px solid #aaaaaa;
+  color: #fff;
+  width: 45%;
+}
+// ここまで繰り返し使いたいやつ
+
+.logo-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 128px;
+  &__img{
+    width: 185px;
+    height: 55px;
+  }
+}
+
+.sell-main{
+  width: 100%;
+  &__title{
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 32px 16px;
+    width: 700px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__form{
+    margin: 0 auto;
+    width: 700px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    &__upload{
+      padding: 40px;
+      p{
+        margin: 8px 0 24px 0;
+        font-size: 14px;
+      }
+      &__head{
+        display: inline-block;
+      }
+      &__box{
+        background-color: #eee;
+        border: 1px dashed #ccc;
+        padding: 40px;
+        text-align: center;
+        min-height: 162px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__text{
+          left: 16px;
+          right: 16px;
+          text-align: center;
+          line-height: 1.5;
+        }
+      }
+    }
+    &__content{
+      padding: 40px;
+      border-top: 1px solid #eee;
+      label{
+        font-size: 14px;
+      }
+      p{
+        font-size: 14px;
+      }
+      a{
+        color: #0099e8;
+        text-decoration: none;
+      }
+      .submit-btn{
+        &__go{
+          margin: 40px 0 0;
+          @include submit();
+          @include submit-red();
+          cursor: pointer;
+        }
+        &__back{
+          margin: 24px auto 0;
+          @include submit();
+          @include submit-gray();
+          cursor: pointer;
+        }
+      }
+      &__text-field{
+        margin: 8px 0 0;
+        width: 100%;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      &__box-label{
+        margin: 40px 0 0;
+      }
+      &__text-area{
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-height: 104px;
+        margin: 8px 0px 0px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      &__head{
+        color: #888;
+        height: 14px;
+        font-size: 14px;
+      }
+      &__right{
+        width: 400px;
+      }
+      &__form-label{
+        margin: 40px 0 0;
+      }
+      &__select{
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+      &__price-first{
+        padding: 0 0 24px;
+        &__label-input{
+          width: 50%;
+          line-height: 48px;
+        }
+        &__input{
+          width: 50%;
+          text-align: right;
+          font-size: 12px;
+        }
+        &__text-field{
+          margin-right: 0;
+          width: 80%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          text-align: right;
+        }
+      }
+      &__price{
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+        font-size: 14px;
+        &__label-profit{
+          font-size: 16px;
+        }
+        &__profit{
+          font-size: 34px;
+        }
+      }
+    }
+  }
+}
+
+.footer-simple{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  a{
+    font-size: 12px;
+  }
+  &__list{
+    &__margin{
+      margin: 0 0 0 16px;
+    }
+  }
+  &__img{
+    width: 80px;
+    height: 65px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 40px auto 0;
+  }
+  &__copyright{
+    font-size: 13px;
+    margin: 8px 0 0;
+  }
+}
