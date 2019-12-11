@@ -25,6 +25,13 @@ vertical-align: top;
   display: flex;
   justify-content: space-between;
 }
+
+@mixin submit-gray(){
+  background: #aaaaaa;
+  border: 1px solid #aaaaaa;
+  color: #fff;
+  width: 45%;
+}
 // ここまで繰り返し使いたいやつ
 
 .logo-header{
@@ -88,6 +95,21 @@ vertical-align: top;
       border-top: 1px solid #eee;
       label{
         font-size: 14px;
+      }
+      p{
+        font-size: 14px;
+      }
+      .submit-btn{
+        &__go{
+          margin: 40px 0 0;
+          @include submit();
+          @include submit-red();
+        }
+        &__back{
+          margin: 24px auto 0;
+          @include submit();
+          @include submit-gray();
+        }
       }
       &__text-field{
         margin: 8px 0 0;
