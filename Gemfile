@@ -77,6 +77,7 @@ gem 'fog-aws'
 gem 'active_hash'
 
 gem "omniauth-rails_csrf_protection"
+gem 'payjp'
 
 group :production do
   gem 'unicorn', '5.4.1'
