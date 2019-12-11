@@ -78,6 +78,7 @@ gem 'active_hash'
 
 gem "omniauth-rails_csrf_protection"
 gem 'payjp'
+gem 'ransack'
 
 group :production do
   gem 'unicorn', '5.4.1'
