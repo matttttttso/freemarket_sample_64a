@@ -124,7 +124,6 @@
             width: 100%;
             z-index: 1;
             vertical-align:text-bottom;
-
           }       
     }
 
@@ -137,7 +136,7 @@
       top: 0px;
       width: 100vw;
     
-      .main-popular-category-area-message{
+      &__message{
         margin-bottom: 16px;
         text-align: center;
         font-family: Arial;
@@ -151,7 +150,7 @@
         margin-inline-start: 0px;
         margin-inline-end: 0px;
       }
-      .main-popular-category-area-tag{
+      &__tag{
       overflow-x: auto;
       text-align: center;
       white-space: nowrap;
@@ -181,158 +180,137 @@
     .ladies-new-items{
       padding: 42px 0px 100px;
     
-      .popular-new-item-area{
+      &__area{
         box-sizing: border-box;
         //特にここは指定なしでもOK
       }
-    .popular-new-item-top{
-      margin-bottom: 16px;
-      align-items: flex-end;
-      display: flex;
-      -webkit-box-pack: justify;
-      justify-content: space-between;
-
-      .popular-new-item-top-text{
-        color: #222;
-        font-size: 14px;
-        height: 64px;
-        line-height: 1.4em;
-        padding: 0 12px;
-        white-space: normal;
-        word-break: break-word;
-        -webkit-box-align: center;
-        display: inline-block;
-        height: 2.8em;
-        position: relative;
-      }
-    }
-
-      .ladies-new-item-top-left-text{
-        font-family: Arial;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 1.4em;
-      }
-
-      .ladies-new-item-top-right-text{
-        font-size: 14px;
-        padding: 5px 16px 5px 5px;
-        display: block;
-        font-weight: 600;
-        position: relative;
+      .popular-new-item-top{
+        margin-bottom: 16px;
+        align-items: flex-end;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
       
-        a{
-          text-decoration: none;
-          color: rgb(0, 149, 238);
+
+        .ladies-new-item-top__left-text{
+          font-family: Arial;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1.4em;
         }
-      }
-    
-        .ladies-new-item-product{
-          padding: 42px 0px 100px;
-  
-          ul.ladies-new-item-product-list{
-            list-style: none;
-            display: flex;
-            width:100%;
-            li.ladies-new-item-product-list-item{
-              display: inline-block;
-              width: 20%;
-              padding: 10px;
-              margin: 20px;
-              border: 1px solid transparent;
-              bottom: 0;
-              content: "";
-              height: 100%;
-              left: 10px;
-              right: 0;
-              top: 0;
-              transition-timing-function: ease-in-out;
-              width: 100%;
-              z-index: 1;
-              transition-duration: .1s;
-              position: relative;
-              margin: 12px 8px;
-              display: flex;
-              flex-wrap: wrap;
-              .ladies-new-item-product-image__price{
-                align-items: center;
-                background: rgba(0,0,0,.4);
-                border-radius: 0 14px 14px 0;
-                bottom: 20px;
-                color: #fff;
-                font-size: 17px;
-                margin: 0;
-                padding: 0 12px;
-                position: absolute;
-                z-index: 2;
-                height: 28px;
-                letter-spacing: .02em;
-              }
-            .ladies-new-item-product-image__text{
-              bottom: -20px;
-              position: absolute;
-              margin-left:15px;
-              object-fit: cover;
-              width: 100%;
-              z-index: 1;
-              vertical-align:text-bottom;
-            }
+
+        .ladies-new-item-top__right-text{
+          font-size: 14px;
+          padding: 5px 16px 5px 5px;
+          display: block;
+          font-weight: 600;
+          position: relative;
+        
+          a{
+            text-decoration: none;
+            color: rgb(0, 149, 238);
           }
         }
       }
+    
+      .ladies-new-item-product{
+        padding: 42px 0px 100px;
+
+        ul.ladies-new-item-product__list{
+          list-style: none;
+          display: flex;
+          width:100%;
+          li.ladies-new-item-product-list-item{
+            display: inline-block;
+            width: 20%;
+            padding: 10px;
+            margin: 20px;
+            border: 1px solid transparent;
+            bottom: 0;
+            content: "";
+            height: 100%;
+            left: 10px;
+            right: 0;
+            top: 0;
+            transition-timing-function: ease-in-out;
+            width: 100%;
+            z-index: 1;
+            transition-duration: .1s;
+            position: relative;
+            margin: 12px 8px;
+            display: flex;
+            flex-wrap: wrap;
+            .ladies-new-item-product-image__price{
+              align-items: center;
+              background: rgba(0,0,0,.4);
+              border-radius: 0 14px 14px 0;
+              bottom: 20px;
+              color: #fff;
+              font-size: 17px;
+              margin: 0;
+              padding: 0 12px;
+              position: absolute;
+              z-index: 2;
+              height: 28px;
+              letter-spacing: .02em;
+            }
+          .ladies-new-item-product-image__text{
+            bottom: -20px;
+            position: absolute;
+            margin-left:15px;
+            object-fit: cover;
+            width: 100%;
+            z-index: 1;
+            vertical-align:text-bottom;
+          }
+        }
+      }
+    }
   }
     .mens-new-items{
       padding: 42px 0px 100px;
-    }
-      .mens-new-item-area{
+      &__area{
         box-sizing: border-box;
-        //特にここは指定なしでもOK
-      }
-        .mens-new-item-top{
-            margin-bottom: 16px;
-            align-items: flex-end;
-            display: flex;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-        
-        
-          .mens-new-item-top-left-text{
+        .mens-new-item__top{
+          margin-bottom: 16px;
+          align-items: flex-end;
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          .mens-new-item__top-left-text{
             font-family: Arial;
             font-size: 24px;
             font-weight: 600;
             line-height: 1.4em;
           }
-          
-          .mens-new-item-top-right-text{
+          .mens-new-item__top-right-text{
             font-size: 14px;
             padding: 5px 16px 5px 5px;
             display: block;
             font-weight: 600;
             position: relative;
+          a{
+            text-decoration: none;
+            color: rgb(0, 149, 238);
           }
-            a{
-              text-decoration: none;
-              color: rgb(0, 149, 238);
-            }
+          }
         }
-      
-            .mens-new-item-product{
-              padding: 42px 0px 100px;
-      
-      
-              ul.mens-new-item-product-list{
-                list-style: none;
-                display: flex;
-                width:100%;
-                li.mens-new-item-product-list-item{
-                  display: inline-block;
-                  width: 20%;
-                  padding: 10px;
-                  margin: 20px;
-                }
-              }
+      }
+        .mens-new-item-product{
+          padding: 42px 0px 100px;
+          ul.mens-new-item-product-list{
+            list-style: none;
+            display: flex;
+            width:100%;
+            li.mens-new-item-product-list-item{
+              display: inline-block;
+              width: 20%;
+              padding: 10px;
+              margin: 20px;
             }
-
+          }
+        }
+    }
 
 
 //フッターの上にある、変な画像
@@ -391,18 +369,12 @@
         height: 30vh;
         width: 20vw;
         margin-right: 20px;
-       
         vertical-align: middle;
       }
       &__google-logo{
         height: 30vh;
         width: 20vw;
-      
-        img{
-          vertical-align: middle;
-          background-size:contain;
-          display: inline-block;
-        }
+ 
       }
     }
   }

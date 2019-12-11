@@ -34,9 +34,9 @@
 
 
     .main-popular-category-area
-      .main-popular-category-area-message
+      .main-popular-category-area__message
         人気のカテゴリー
-      .main-popular-category-area-tag
+      .main-popular-category-area__tag
         %ul
           %li レディース
           %li メンズ
@@ -44,15 +44,15 @@
           %li おもちゃ・ホビー・グッズ
     
     .ladies-new-items
-      .popular-new-item-area
+      .popular-new-item__area
         .popular-new-item-top
-          .ladies-new-item-top-left-text
+          .ladies-new-item-top__left-text
             レディース新着アイテム
-          .ladies-new-item-top-right-text
+          .ladies-new-item-top__right-text
             = link_to "もっと見る","#"
 
         .ladies-new-item-product
-          %ul.ladies-new-item-product-list
+          %ul.ladies-new-item-product__list
             %li.ladies-new-item-product-list-item
               = link_to image_tag('mercarineko.jpg'), '#'
               .ladies-new-item-product-image__price  ¥1,000
@@ -75,11 +75,11 @@
 
 
     .mens-new-items
-      .mens-new-item-area
-        .mens-new-item-top
-          .mens-new-item-top-left-text
+      .mens-new-items__area
+        .mens-new-item__top
+          .mens-new-item__top-left-text
             メンズ新着アイテム
-          .mens-new-item-top-right-text
+          .mens-new-item__top-right-text
             = link_to "もっと見る","#"
         .mens-new-item-product
           %ul.mens-new-item-product-list
