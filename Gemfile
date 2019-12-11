@@ -74,6 +74,8 @@ gem 'carrierwave'
 gem 'devise'
 gem 'fog-aws'
 
+gem 'active_hash'
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
