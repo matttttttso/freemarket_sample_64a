@@ -4,13 +4,15 @@
   margin: 0;
 }
 
-.l-single_main{
+.logout-mainbox{
+  width: 700px;
+  height:178.46px;
+  font: 14px;
+  background:#FFF;
   position: relative;
-  min-height: 100%;
-  background: #333333;
  
-}
-.l-single_inner{
+ 
+  &_inner{
   width: 700px;
   height:178.46px;
   font: 14px;
@@ -21,14 +23,15 @@
   // background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   // border-top: 1px solid #f5f5f5;
+ }
 }
  
 
-.l-single__submit{
-  //  margin: 16px 0 0;
+.logout-submit{
+   margin: 64px 0 0;
   //  @include submit();
   //  @include submit-red();
-  
+
 
   &__red{
     // display: block;
@@ -40,7 +43,7 @@
     background: #ea352d;
     // border: 1px solid #fff;
     color: #fff;
-    margin-left: 110px;
+    margin-left: 190px;
     border-style: solid;
     border-width: 0;
 
