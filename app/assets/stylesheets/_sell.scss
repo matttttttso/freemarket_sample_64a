@@ -104,11 +104,13 @@ vertical-align: top;
           margin: 40px 0 0;
           @include submit();
           @include submit-red();
+          cursor: pointer;
         }
         &__back{
           margin: 24px auto 0;
           @include submit();
           @include submit-gray();
+          cursor: pointer;
         }
       }
       &__text-field{
