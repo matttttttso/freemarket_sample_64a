@@ -100,3 +100,31 @@
             %option 1~2日で発送
             %option 2~3日で発送
             %option 4~7日で発送
+
+    .sell-main__form__content.space-between
+      %h3.sell-main__form__content__head.bolb
+        販売価格(300〜9,999,999)
+        %span.form-question
+          ?
+      %ul.sell-main__form__content__right
+        %li.sell-main__form__content__price-first.space-between
+          .sell-main__form__content__price-first__label-input
+            %label.bolb
+              配送料の負担
+            %span.form-require
+              必須
+          .sell-main__form__content__price-first__input
+            ¥
+            %input{name: "item-name", type: "text_field", placeholder: "例）300", class: "sell-main__form__content__price-first__text-field"}
+        %li.sell-main__form__content__price.space-between
+          .sell-main__form__content__price__label-fee
+            %label
+              販売手数料(10%)
+          .sell-main__form__content__price__fee
+            ー
+        %li.sell-main__form__content__price.space-between.bolb
+          .sell-main__form__content__price__label-profit
+            %label
+              販売利益
+          .sell-main__form__content__price__profit
+            ー
