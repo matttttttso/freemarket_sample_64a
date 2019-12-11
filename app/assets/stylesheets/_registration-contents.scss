@@ -20,6 +20,12 @@
       width: 343px;
       margin: 32px auto 0;
 
+      img{
+        margin-top: 5px;
+        width: 30px; height: 30px;
+        object-fit: contain;
+      }
+
       &__info-text{
         margin: 8px 0 0;
         color: #888;
@@ -30,7 +36,7 @@
         margin: 0 0 8px;
       }
 
-      &__birthday{
+      &__division{
         width: 343px;
         display: flex;
 
@@ -42,7 +48,7 @@
     }
 
     .submit-btn{
-      margin: 32px 0 0;
+      margin: 32px 0;
       @include submit();
       @include submit-red();
     }
