@@ -61,6 +61,7 @@ body{
   }
 }
 
+// submitボタン
 @mixin submit(){
   display: block;
   width: 100%;
@@ -78,6 +79,7 @@ body{
   color: #fff;
 }
 
+// ユーザープロフィールの画像関連
 @mixin icon(){
   overflow: hidden;
   width: 60px;
@@ -91,6 +93,7 @@ body{
   background-size: cover;
 }
 
+// formのinputボックス
 @mixin input-default($length){
   height: 48px;
   width: $length;
@@ -99,27 +102,6 @@ body{
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
-}
-
-@mixin select-default($length){
-  height: 48px;
-  width: $length;
-  margin: 8px 0 0;
-  padding: 0 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: 0;
-  font-size: 16px;
-}
-
-@mixin form-need($color){
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  background-color: $color;
-  color: #fff;
-  font-size: 12px;
-  vertical-align: top;
 }
 
 .input-text-field{
@@ -133,6 +115,18 @@ body{
 
 .input-text-field-herf{
   @include input-default(calc(50% - 6px));
+}
+
+// formのselectボックス
+@mixin select-default($length){
+  height: 48px;
+  width: $length;
+  margin: 8px 0 0;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
 }
 
 .select-wrap{
@@ -165,10 +159,63 @@ body{
   -moz-appearance: none;
 }
 
+// formの必須・任意の項目
+@mixin form-need($color){
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  background-color: $color;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
 .form-necessary{
   @include form-need(#ea352d);
 }
 
 .form-arbitrary{
   @include form-need(#ccc);
+}
+
+// app-banner定形…？
+
+.app-banner{
+  background-image: image-url('download_bg_pc.jpg');
+  background-repeat: no-repeat;
+  background-size:  cover;
+  height: 260px;
+  width: 700px;
+  position: relative;
+  color: #fff;
+  padding: 0 40px;
+
+  &__back{
+    position: absolute;
+    display: flex;
+
+    &__inner{
+      text-align: center;
+      margin: 70px 30px 0 0;
+      h2{
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      p{
+        font-size: 26px;
+      }
+      .img-box{
+        margin-top: 20px;
+        display: flex;
+        img{
+          height: 45px;
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    img{
+      height: 260px;
+    }
+  }
 }
