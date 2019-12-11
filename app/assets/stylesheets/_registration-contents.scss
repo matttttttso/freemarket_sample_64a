@@ -52,5 +52,36 @@
       @include submit();
       @include submit-red();
     }
+
+    .email-submit{
+      margin: 32px 0;
+      border-radius: 4px;
+      position: relative;
+      @include submit();
+      @include submit-red();
+    }
+    .facebook-submit{
+      margin: 32px 0;
+      border-radius: 4px;
+      position: relative;
+      @include submit();
+      background: #385185;
+      border: 1px solid #385185;
+      color: #fff;
+    }
+    .google-submit{
+      margin: 32px 0;
+      border-radius: 4px;
+      position: relative;
+      @include submit();
+      border: 1px solid #979797;
+      color: #333;
+    }
+    i{
+      font-size: 20px;
+      position: absolute;
+      top: 30%;
+      left: 16px;
+    }
   }
 }

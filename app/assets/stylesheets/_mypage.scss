@@ -25,6 +25,19 @@ body{
   color: #333;
 }
 
+// 商品関連・サインアップ・ログインページ共通ヘッダー
+.sub-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 128px;
+  img{
+    width: 185px;
+    height: 55px;
+  }
+}
+
 .bolb{
   font-weight: 600;
 }
