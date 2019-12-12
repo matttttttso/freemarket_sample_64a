@@ -1,0 +1,16 @@
+.registration-contents
+  %h2.single-head.bolb
+    新規会員登録
+  .registration-form
+    .registration-form__content
+      = link_to '#', class: 'email-submit' do
+        メールアドレスで登録する
+        = icon 'far', 'envelope'
+    .registration-form__content
+      = link_to '#', class: 'facebook-submit' do
+        Facebookで登録する
+        = icon 'fab', 'facebook-square'
+    .registration-form__content
+      = link_to '#', class: 'google-submit' do
+        googleで登録する
+        = icon 'fab', 'google'
