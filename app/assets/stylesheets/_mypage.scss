@@ -145,7 +145,7 @@ body{
 .select-wrap{
   position: relative;
 
-  i{
+  &__icon{
     display: inline-block;
     position: absolute;
     right: 16px;

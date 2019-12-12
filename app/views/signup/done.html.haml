@@ -1,0 +1,28 @@
+.registration-wrapper
+  = render "registration-header"
+  .registration-contents
+    %h2.single-head.bolb
+      会員登録完了
+    .registration-form
+      .registration-form__content
+        %p.text-center
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+        %input{type: "submit", value: "メルカリをはじめる", class: "submit-btn"}
+    .app-banner
+      .app-banner__back
+        .app-banner__back__inner
+          %h2.bolb
+            ＼ スマホでかんたんフリマアプリ ／
+          %p.bolb
+            今すぐ無料ダウンロード！
+          .img-box
+            = image_tag 'logo_white.svg'
+            = link_to "#" do
+              = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg'
+            = link_to "#" do
+              = image_tag 'google-play-badge.png'
+        .app-banner__back__image
+          = image_tag 'app_pc-a.png'
+  = render "registration-footer"
