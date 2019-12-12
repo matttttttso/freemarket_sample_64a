@@ -30,7 +30,7 @@
         郵便番号
       %span.form-arbitrary
         任意
-      %input{name: "zip-code", type: "text_field", placeholder: "例) 1234567", class: "single-contents__content__text"}
+      %input{name: "zip-code", type: "text_field", placeholder: "例) 1234567", class: "input-text-field"}
     .single-contents__content
       %label.bolb
         都道府県
@@ -38,7 +38,7 @@
         任意
       .select-wrap
         = icon 'fas', 'chevron-down'
-        %select{name: "prefecture", class: "select-wrap__select"}
+        %select{name: "prefecture", class: "select"}
           %option --
           %option 北海道
           // active_hashの利用はコンフリクトの発生を考慮して出品ページの完了後に実装
@@ -47,19 +47,19 @@
         市区町村
       %span.form-arbitrary
         任意
-      %input{name: "city", type: "text_field", placeholder: "例) 横浜市緑区", class: "single-contents__content__text"}
+      %input{name: "city", type: "text_field", placeholder: "例) 横浜市緑区", class: "input-text-field"}
     .single-contents__content
       %label.bolb
         番地
       %span.form-arbitrary
         任意
-      %input{name: "address1", type: "text_field", placeholder: "例) 青山1−1−1", class: "single-contents__content__text"}
+      %input{name: "address1", type: "text_field", placeholder: "例) 青山1−1−1", class: "input-text-field"}
     .single-contents__content
       %label.bolb
         建物名
       %span.form-arbitrary
         任意
-      %input{name: "address2", type: "text_field", placeholder: "例) 柳ビル103", class: "single-contents__content__text"}
+      %input{name: "address2", type: "text_field", placeholder: "例) 柳ビル103", class: "input-text-field"}
     %input{type: "submit", value: "登録する", class: "submit-btn"}
     %p.text-right
       = link_to "#" do

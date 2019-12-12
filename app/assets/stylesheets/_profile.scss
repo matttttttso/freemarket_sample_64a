@@ -16,7 +16,7 @@
 
     &__text{
       width: 220px;
-      @include input-default();
+      @include input-default(100%);
     }
   }
 

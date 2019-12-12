@@ -1,0 +1,27 @@
+.registration-contents
+  %h2.single-head.bolb
+    電話番号認証
+  %form.registration-form
+    .registration-form__content
+      %label.registration-form__content__sub-head.bolb
+        認証番号
+      %input{name: "authenticate", type: "text_field", placeholder: "認証番号を入力", class: "input-text-field"}
+      %p
+        SMSで届いた認証番号を入力してください
+      %input{type: "submit", value: "認証して完了", class: "submit-btn"}
+    .border
+    .registration-form__content
+      %p.registration-form__content__sub-head.bolb
+        30秒たっても認証番号が届かない方へ
+      %p
+        電話で認証番号を聞くこともできます。
+      %input{type: "submit", value: "電話で認証番号を聞く", class: "submit-btn"}
+    .border
+    .registration-form__content
+      %p.registration-form__content__sub-head.bolb
+        認証番号を再送することもできます。もう一度電話番号を入力してください。
+      = link_to "電話番号を再度入力する", "#"
+      %p
+        ※SMSが届かない場合は
+        = link_to "SMS受信設定", "#"
+        を確認して、もう一度電話番号を入力してください。

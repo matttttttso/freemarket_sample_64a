@@ -1,0 +1,62 @@
+.login-panel{
+  width: 456px;
+  padding: 40px 64px;
+  background-color: #fff;
+  margin: 0 auto;
+  font-size: 14px;
+
+  &__account{
+    padding: 0 0 30px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    .submit-btn{
+      margin: 10px 0;
+      @include submit();
+      color: #fff;
+      border: 1px solid #0099e8;
+      background-color: #0099e8;
+    }
+  }
+
+  &__contents{
+    margin: 40px 0 0;
+
+    a{
+      color: #0099e8;
+    }
+    
+    &__content{
+      .facebook-login{
+        margin: 10px 0;
+        @include submit();
+        position: relative;
+        color: #fff;
+        border: 1px solid #385185;
+        background-color: #385185;
+      }
+      .google-login{
+        margin: 10px 0;
+        @include submit();
+        position: relative;
+        border: 1px solid #979797;
+        color: #333;
+      }
+      i{
+        font-size: 20px;
+        position: absolute;
+        top: 30%;
+        left: 16px;
+      }
+    }
+
+    &__text-filed{
+      margin-top: 40px;
+
+      .submit-btn{
+        margin: 32px 0;
+        @include submit();
+        @include submit-red();
+      }
+    }
+  }
+}
