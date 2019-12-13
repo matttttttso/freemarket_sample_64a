@@ -1,0 +1,46 @@
+.registration-contents
+  %h2.single-head.bolb
+    支払い方法
+  %form.registration-form
+    .registration-form__content
+      %label.bolb
+        カード番号
+      %span.form-necessary
+        必須
+      %input{name: "card-num", type: "text_field", placeholder: "半角数字のみ", class: "input-text-field"}
+      = image_tag 'visa.png'
+      = image_tag 'master.png'
+      = image_tag 'saison.png'
+      = image_tag 'jcb.png'
+      = image_tag 'amex.png'
+      = image_tag 'diners.png'
+      = image_tag 'discover.png'
+    .registration-form__content
+      %label.bolb
+        有効期限
+      %span.form-necessary
+        必須
+      .registration-form__content__division
+        .select-wrap
+          = icon 'fas', 'chevron-down'
+          %select{name: "month", class: "select-credit"}
+            %option --
+        %span
+          月
+        .select-wrap
+          = icon 'fas', 'chevron-down'
+          %select{name: "year", class: "select-credit"}
+            %option --
+        %span
+          年
+    .registration-form__content
+      %label.bolb
+        セキュリティーコード
+      %span.form-necessary
+        必須
+      %input{name: "card-num", type: "text_field", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-text-field"}
+      %p.text-right
+        = link_to "#" do
+          = icon 'fas', 'question-circle'
+          カード裏面の番号とは？
+      %input{type: "submit", value: "次へ進む", class: "submit-btn"}
