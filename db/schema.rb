@@ -13,12 +13,16 @@
 ActiveRecord::Schema.define(version: 2019_12_12_071717) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name_kanji", null: false
+    t.string "first_name_kanji", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
     t.integer "zip_code", null: false
     t.integer "prefecture", null: false
     t.string "city", null: false
     t.string "block", null: false
     t.string "building", null: false
-    t.integer "address_phone_number"
+    t.integer "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
