@@ -1,6 +1,6 @@
 .logo-header
   .logo-header__img
-    = link_to "#" do
+    = link_to root_path do
       = image_tag 'fmarket_logo_red.svg'
 
 .sell-main
@@ -147,6 +147,7 @@
           %input{ type: "submit", value: "出品する", class: "submit-btn__go" }
         .sell-main__form__content__box__images
           %input{ type: "submit", value: "もどる", class: "submit-btn__back" }
+          
 
 .footer-simple
   .footer-simple__list
@@ -157,7 +158,7 @@
     %a.footer-simple__list__margin
       特定商取引に関する表記
   .footer-simple__img
-    = link_to "#" do
+    = link_to root_path do
       = image_tag 'logo_gray.svg'
   .footer-simple__copyright
     &copy; Fmarket, Inc.
