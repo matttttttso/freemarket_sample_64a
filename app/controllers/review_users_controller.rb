@@ -1,4 +1,7 @@
 class ReviewUsersController < ApplicationController
-  def index
+  def mypage
+  end
+
+  def profile
   end
 end
