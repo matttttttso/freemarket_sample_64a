@@ -8,7 +8,9 @@
       %input{name: "cellphone", type: "text_field", placeholder: "携帯電話の番号を入力", class: "input-text-field"}
       %p
         本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-      %input{type: "submit", value: "次へ進む", class: "submit-btn"}
+      = link_to phone_num2_review_users_path, class: 'submit-btn' do
+        次へ進む
+      -# %input{type: "submit", value: "次へ進む", class: "submit-btn"}
       %p
         ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
       %p.text-right
