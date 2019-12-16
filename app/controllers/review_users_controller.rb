@@ -1,4 +1,7 @@
 class ReviewUsersController < ApplicationController
+  def toppage  
+  end
+
   def login  
   end
 
