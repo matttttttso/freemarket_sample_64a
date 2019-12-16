@@ -1,0 +1,47 @@
+.registration-wrapper
+  = render "registration-header"
+  .registration-contents
+    %h2.single-head.bolb
+      支払い方法
+    = form_with model: @user, local: true, url: done_signup_index_path, method: :get, class: 'registration-form' do |f|
+      .registration-form__content
+        = f.label :card_num, class: 'bolb' do
+          カード番号
+        %span.form-necessary
+          必須
+        = f.text_field :card_num, placeholder: "半角数字のみ", class: 'input-text-field'
+        = image_tag 'visa.png'
+        = image_tag 'master.png'
+        = image_tag 'saison.png'
+        = image_tag 'jcb.png'
+        = image_tag 'amex.png'
+        = image_tag 'diners.png'
+        = image_tag 'discover.png'
+      .registration-form__content
+        = f.label :month, class: 'bolb' do
+          有効期限
+        %span.form-necessary
+          必須
+        .registration-form__content__division
+          .select-wrap
+            = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+            = f.select :month, [*1..12], { prompt: "--" }, class: 'select-credit'
+          %span
+            月
+          .select-wrap
+            = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+            = f.select :year, [*19..29], { prompt: "--" }, class: 'select-credit'
+          %span
+            年
+      .registration-form__content
+        = f.label :code, class: 'bolb' do
+          セキュリティーコード
+        %span.form-necessary
+          必須
+        = f.text_field :code, placeholder: "カード背面4桁もしくは3桁の番号", class: 'input-text-field'
+        %p.text-right
+          = link_to "#" do
+            = icon 'fas', 'question-circle'
+            カード裏面の番号とは？
+        = f.submit value: "次へ進む", class: "submit-btn"
+  = render "registration-footer"
