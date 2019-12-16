@@ -7,7 +7,9 @@
         ありがとうございます。
         %br
         会員登録が完了しました。
-      %input{type: "submit", value: "メルカリをはじめる", class: "submit-btn"}
+      = link_to root_path, class: 'submit-btn' do
+        メルカリをはじめる
+      -# %input{type: "submit", value: "メルカリをはじめる", class: "submit-btn"}
   .app-banner
     .app-banner__back
       .app-banner__back__inner
