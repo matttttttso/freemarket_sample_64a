@@ -3,7 +3,7 @@
   .registration-contents
     %h2.single-head.bolb
       発送元・お届け先住所入力
-    = form_with model: @user, local: true, url: done_signup_index_path, method: :get, class: 'registration-form' do |f|
+    = form_with model: @user, local: true, url: signup_index_path, method: 'POST', class: 'registration-form' do |f|
       = f.fields_for :address do |a|
         .registration-form__content
           = a.label :address_name_kanji, class: 'bolb' do

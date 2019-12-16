@@ -3,7 +3,7 @@
   .registration-contents
     %h2.single-head.bolb
       会員情報入力
-    = form_with model: @user, local: true, url: step2_signup_index_path, method: :get, class: 'registration-form' do |f|
+    = form_with model: @user, local: true, url: step2_signup_index_path, method: 'GET', class: 'registration-form' do |f|
       .registration-form__content
         = f.label :nickname, class: 'bolb' do
           ニックネーム
@@ -53,7 +53,7 @@
         .registration-form__content__division
           .select-wrap
             = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
-            = f.select :birthdate_month, [*1900..2019].reverse, { prompt: "--" }, autofocus: true, class: 'select-division'
+            = f.select :birthdate_year, [*1900..2019].reverse, { prompt: "--" }, autofocus: true, class: 'select-division'
           %span
             年
           .select-wrap

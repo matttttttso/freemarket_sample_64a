@@ -28,8 +28,6 @@ class SignupController < ApplicationController
 
   # ここでcreateアクションが動く
   def create
-    # step3で入力されたデータをsessionに保存する
-    session[:address_attributes] = user_params[:address_attributes]
     # sessionに保存されたデータを用いてUserを作成
     @user = User.new(
       nickname: session[:nickname],
@@ -44,14 +42,22 @@ class SignupController < ApplicationController
       birthdate_day: session[:birthdate_day],
       phone_number: session[:user_phone_number]
     )
-    @user.build_address(session[:address_attributes])
+    @user.build_address(user_params[:address_attributes])
+    if @user.save
+      session[:id] = @user.id
+      redirect_to done_signup_index_path
+    else
+      render '/signup/step1'
+    end
   end
 
   # 上記で保存されたUserのidとPayjpでクレジットカードを紐付ける
-  def step4
-  end
+  # クレジットカードの登録は購入機能の作成の際に同時に行う
+  # def step4
+  # end
 
   def done
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   private

@@ -3,7 +3,7 @@
   .registration-contents
     %h2.single-head.bolb
       電話番号の確認
-    = form_with model: @user, local: true, url: step3_signup_index_path, method: :get, class: 'registration-form' do |f|
+    = form_with model: @user, local: true, url: step3_signup_index_path, method: 'GET', class: 'registration-form' do |f|
       .registration-form__content
         = f.label :phone_number, class: 'registration-form__content__sub-head bolb' do
           携帯電話の番号
