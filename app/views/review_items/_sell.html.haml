@@ -146,7 +146,9 @@
         .sell-main__form__content__box__text
           %input{ type: "submit", value: "出品する", class: "submit-btn__go" }
         .sell-main__form__content__box__images
-          %input{ type: "submit", value: "もどる", class: "submit-btn__back" }
+          = link_to :back, class: 'submit-btn__back' do
+            もどる
+        -# %input{ type: "submit", value: "もどる", class: "submit-btn__back" }
           
 
 .footer-simple
