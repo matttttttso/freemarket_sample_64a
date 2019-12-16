@@ -8,7 +8,9 @@
       %input{name: "authenticate", type: "text_field", placeholder: "認証番号を入力", class: "input-text-field"}
       %p
         SMSで届いた認証番号を入力してください
-      %input{type: "submit", value: "認証して完了", class: "submit-btn"}
+      = link_to address_review_users_path, class: 'submit-btn' do
+        認証して完了
+      -# %input{type: "submit", value: "認証して完了", class: "submit-btn"}
     .border
     .registration-form__content
       %p.registration-form__content__sub-head.bolb
