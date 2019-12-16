@@ -80,7 +80,9 @@
           「次へ進む」のボタンを押すことにより、
           = link_to "利用規約", "#"
           に同意したものとみなします
-      %input{type: "submit", value: "次へ進む", class: "submit-btn"}
+      = link_to phone_num_review_users_path, class: 'submit-btn' do
+        次へ進む
+      -# %input{type: "submit", value: "次へ進む", class: "submit-btn"}
       %p.text-right
         = link_to "#" do
           本人情報の登録について
