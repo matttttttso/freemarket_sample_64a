@@ -1,4 +1,4 @@
 class ReviewItemsController < ApplicationController
-  def index
+  def sell
   end
 end
