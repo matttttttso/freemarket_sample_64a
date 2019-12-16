@@ -1,0 +1,23 @@
+.login-panel
+  .login-panel__account
+    アカウントをお持ちでない方はこちら
+    = link_to '新規会員登録', '#', class: 'submit-btn'
+  %form.login-panel__contents
+    .login-panel__contents__content
+      = link_to '#', class: 'facebook-login' do
+        Facebookでログイン
+        = icon 'fab', 'facebook-square'
+    .login-panel__contents__content
+      = link_to '#', class: 'google-login' do
+        googleでログイン
+        = icon 'fab', 'google'
+    .login-panel__contents__text-filed
+      %input{name: "email", type: "text_field", placeholder: "メールアドレス", class: "input-text-field"}
+      %input{name: "password", type: "password", placeholder: "パスワード", class: "input-text-field"}
+
+      // reCAPCHA挿入位置
+      = link_to phone_num2_review_users_path, class: 'submit-btn' do
+        ログイン
+      -# %input{type: "submit", value: "ログイン", class: "submit-btn"}
+    %p
+      = link_to "パスワードをお忘れの方", "#"
