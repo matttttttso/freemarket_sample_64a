@@ -9,19 +9,31 @@
           ニックネーム
         %span.form-necessary
           必須
-        = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: 'input-text-field'
+        - if @user.errors.full_messages_for(:nickname).any?
+          = f.text_field :nickname, placeholder: "例) メルカリ太郎", autofocus: true, class: 'input-text-field has-error'
+        - else
+          = f.text_field :nickname, placeholder: "例) メルカリ太郎", autofocus: true, class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "nickname" }
       .registration-form__content
         = f.label :email, class: 'bolb' do
           メールアドレス
         %span.form-necessary
           必須
-        = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: 'input-text-field'
+        - if @user.errors.full_messages_for(:email).any?
+          = f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true, class: 'input-text-field has-error'
+        - else
+          = f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true, class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "email" }
       .registration-form__content
         = f.label :password, class: 'bolb' do
           パスワード
         %span.form-necessary
           必須
-        = f.password_field :password, placeholder: "7文字以上の半角英数字", class: 'input-text-field'
+        - if @user.errors.full_messages_for(:password).any?
+          = f.password_field :password, placeholder: "7文字以上の半角英数字", autofocus: true, class: 'input-text-field has-error'
+        - else
+          = f.password_field :password, placeholder: "7文字以上の半角英数字", autofocus: true, class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "password" }
         %p.registration-form__content__info-text
           ※ 英字と数字の両方を含めて設定してください
       .registration-form__content
@@ -35,16 +47,32 @@
             お名前(全角)
           %span.form-necessary
             必須
-        = f.text_field :family_name_kanji, placeholder: "例) 山田", class: 'input-text-field-herf'
-        = f.text_field :first_name_kanji, placeholder: "例) 彩", class: 'input-text-field-herf'
+        - if @user.errors.full_messages_for(:family_name_kanji).any?
+          = f.text_field :family_name_kanji, placeholder: "例) 山田", autofocus: true, class: 'input-text-field-herf has-error'
+        - else
+          = f.text_field :family_name_kanji, placeholder: "例) 山田", autofocus: true, class: 'input-text-field-herf'
+        - if @user.errors.full_messages_for(:first_name_kanji).any?
+          = f.text_field :first_name_kanji, placeholder: "例) 彩", autofocus: true, class: 'input-text-field-herf has-error'
+        - else
+          = f.text_field :first_name_kanji, placeholder: "例) 彩", autofocus: true, class: 'input-text-field-herf'
+        = render partial: 'error-message', locals: { user: @user, column: "family_name_kanji" }
+        = render partial: 'error-message', locals: { user: @user, column: "first_name_kanji" }
       .registration-form__content
         %p
           = f.label :family_name_kana, class: 'bolb' do
             お名前カナ(全角)
           %span.form-necessary
             必須
-        = f.text_field :family_name_kana, placeholder: "例) ヤマダ", class: 'input-text-field-herf'
-        = f.text_field :first_name_kana, placeholder: "例) アヤ", class: 'input-text-field-herf'
+        - if @user.errors.full_messages_for(:family_name_kana).any?
+          = f.text_field :family_name_kana, placeholder: "例) ヤマダ", autofocus: true, class: 'input-text-field-herf has-error'
+        - else
+          = f.text_field :family_name_kana, placeholder: "例) ヤマダ", autofocus: true, class: 'input-text-field-herf'
+        - if @user.errors.full_messages_for(:family_name_kana).any?
+          = f.text_field :first_name_kana, placeholder: "例) アヤ", autofocus: true, class: 'input-text-field-herf has-error'
+        - else
+          = f.text_field :first_name_kana, placeholder: "例) アヤ", autofocus: true, class: 'input-text-field-herf'
+        = render partial: 'error-message', locals: { user: @user, column: "family_name_kana" }
+        = render partial: 'error-message', locals: { user: @user, column: "first_name_kana" }
       .registration-form__content
         = f.label :birthdate, class: 'bolb' do
           生年月日
@@ -52,20 +80,35 @@
           必須
         .registration-form__content__division
           .select-wrap
-            = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
-            = f.select :birthdate_year, [*1900..2019].reverse, { prompt: "--" }, autofocus: true, class: 'select-division'
+            - if @user.errors.full_messages_for(:birthdate_year).any?
+              = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+              = f.select :birthdate_year, [*1900..2019].reverse, { prompt: "--" }, autofocus: true, class: 'select-division has-error'
+            - else
+              = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+              = f.select :birthdate_year, [*1900..2019].reverse, { prompt: "--" }, autofocus: true, class: 'select-division'
           %span
             年
           .select-wrap
-            = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
-            = f.select :birthdate_month, [*1..12], { prompt: "--" }, autofocus: true, class: 'select-division'
+            - if @user.errors.full_messages_for(:birthdate_month).any?
+              = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+              = f.select :birthdate_month, [*1..12], { prompt: "--" }, autofocus: true, class: 'select-division has-error'
+            - else
+              = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+              = f.select :birthdate_month, [*1..12], { prompt: "--" }, autofocus: true, class: 'select-division'
           %span
             月
           .select-wrap
-            = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
-            = f.select :birthdate_day, [*1..31], { prompt: "--" }, autofocus: true, class: 'select-division'
+            - if @user.errors.full_messages_for(:birthdate_day).any?
+              = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+              = f.select :birthdate_day, [*1..31], { prompt: "--" }, autofocus: true, class: 'select-division has-error'
+            - else
+              = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
+              = f.select :birthdate_day, [*1..31], { prompt: "--" }, autofocus: true, class: 'select-division'
           %span
             日
+        = render partial: 'error-message', locals: { user: @user, column: "birthdate_year" }
+        = render partial: 'error-message', locals: { user: @user, column: "birthdate_month" }
+        = render partial: 'error-message', locals: { user: @user, column: "birthdate_day" }
         %p.registration-form__content__info-text
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 

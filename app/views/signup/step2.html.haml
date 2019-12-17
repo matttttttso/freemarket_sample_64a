@@ -7,7 +7,11 @@
       .registration-form__content
         = f.label :phone_number, class: 'registration-form__content__sub-head bolb' do
           携帯電話の番号
-        = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: 'input-text-field'
+        - if @user.errors.full_messages_for(:phone_number).any?
+          = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: 'input-text-field'
+        - else
+          = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "phone_number" }
         %p
           本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         = f.submit value: "次へ進む", class: 'submit-btn'
