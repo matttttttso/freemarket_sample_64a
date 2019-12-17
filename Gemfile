@@ -86,6 +86,7 @@ gem 'ransack'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem "aws-sdk-s3", require: false
 
 group :production do
   gem 'unicorn', '5.4.1'
