@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_093753) do
+ActiveRecord::Schema.define(version: 2019_12_17_102634) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "family_name_kanji", null: false
-    t.string "first_name_kanji", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_katakana", null: false
+    t.string "first_name_katakana", null: false
     t.string "zip_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "block", null: false
     t.string "building", null: false
-    t.string "phone_number"
+    t.string "telephone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
