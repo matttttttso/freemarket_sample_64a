@@ -45,6 +45,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+
 end
 
 group :development do
@@ -83,6 +85,10 @@ gem 'ransack'
 
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem "aws-sdk-s3", require: false
+
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn', '5.4.1'
