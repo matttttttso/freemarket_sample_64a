@@ -10,15 +10,15 @@
             お名前
           %span.form-necessary
             必須
-          = a.text_field :family_name_kanji, placeholder: "山田", class: "input-text-field"
-          = a.text_field :first_name_kanji, placeholder: "彩", class: "input-text-field"
+          = a.text_field :family_name, placeholder: "山田", class: "input-text-field"
+          = a.text_field :first_name, placeholder: "彩", class: "input-text-field"
         .registration-form__content
           = a.label :address_name_kana, class: 'bolb' do
             お名前カナ
           %span.form-necessary
             必須
-          = a.text_field :family_name_kana, placeholder: "ヤマダ", class: "input-text-field"
-          = a.text_field :first_name_kana, placeholder: "アヤ", class: "input-text-field"
+          = a.text_field :family_name_katakana, placeholder: "ヤマダ", class: "input-text-field"
+          = a.text_field :first_name_katakana, placeholder: "アヤ", class: "input-text-field"
         .registration-form__content
           = a.label :zip_code, class: 'bolb' do
             郵便番号
@@ -52,10 +52,10 @@
             任意
           = a.text_field :building, placeholder: "例) 柳ビル103", class: 'input-text-field'
         .registration-form__content
-          = a.label :phone_number, class: 'bolb' do
+          = a.label :telephone_number, class: 'bolb' do
             電話
           %span.form-arbitrary
             任意
-          = a.text_field :phone_number, placeholder: "例) 09012345678", class: 'input-text-field'
+          = a.text_field :telephone_number, placeholder: "例) 09012345678", class: 'input-text-field'
           = f.submit value: "次へ進む", class: 'submit-btn'
   = render "registration-footer"

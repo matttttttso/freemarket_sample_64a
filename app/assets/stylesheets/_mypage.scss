@@ -172,6 +172,15 @@ body{
   -moz-appearance: none;
 }
 
+.has-error{
+  border-color: #ea352d;
+}
+
+.error-text{
+  color: #ea352d;
+  line-height: 1.5;
+}
+
 // formの必須・任意の項目
 @mixin form-need($color){
   margin: 0 0 0 8px;
