@@ -99,7 +99,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## Trade_statusテーブル
+## Trade_statesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |trade_state|string|null: false|
