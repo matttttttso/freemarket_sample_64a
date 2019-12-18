@@ -1,0 +1,2 @@
+class TradeState < ApplicationRecord
+end
