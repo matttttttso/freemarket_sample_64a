@@ -9,11 +9,11 @@
           メールアドレスで登録する
           = icon 'far', 'envelope', class: 'link-icon'
       .registration-form__content
-        = link_to '#', class: 'facebook-submit' do
+        = link_to user_facebook_omniauth_authorize_path,method: :post, class: 'facebook-submit' do
           Facebookで登録する
           = icon 'fab', 'facebook-square', class: 'link-icon'
       .registration-form__content
-        = link_to '#', class: 'google-submit' do
+        = link_to user_google_oauth2_omniauth_authorize_path,method: :post, class: 'google-submit' do
           googleで登録する
           = icon 'fab', 'google', class: 'link-icon'
   = render "registration-footer"
