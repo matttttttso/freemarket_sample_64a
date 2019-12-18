@@ -38,7 +38,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      render '/signup/step3'
+      render :step3
     end
   end
 
@@ -80,7 +80,7 @@ class SignupController < ApplicationController
       # 未入力項目にはバリデーションに通る値を入れる
       phone_number: "09012345678"
     )
-    render '/signup/step1' unless @user.valid?
+    render :step1 unless @user.valid?
   end
 
   def step2_valid
@@ -100,7 +100,7 @@ class SignupController < ApplicationController
       birthdate_day: session[:birthdate_day],
       phone_number: session[:user_phone_number]
     )
-    render '/signup/step2' unless @user.valid?
+    render :step2 unless @user.valid?
   end
 
   def user_params
