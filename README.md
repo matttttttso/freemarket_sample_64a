@@ -48,15 +48,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|price|integer|null: false|
 |explain|text|null: false|
 |category|string|null: false|
-|brand|string|null: false|
 |size|string|null: false|
+|brand|string|null: false|
 |condition|string|null: false|
 |postage|string|null: false|
+|shipping_method|string|null: false|
 |region|string|null: false|
-|shopping_date|string|null: false|
+|shipping_days|string|null: false|
+|price|integer|null: false|
 |user|references|foreign_key: true|
 
 ### Association
@@ -98,7 +99,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## Trade_statusテーブル
+## Trade_statesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |trade_state|string|null: false|
