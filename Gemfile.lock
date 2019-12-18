@@ -135,6 +135,11 @@ GEM
     erubis (2.7.0)
     excon (0.70.0)
     execjs (2.7.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
@@ -283,6 +288,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+    rails-i18n (5.1.3)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.2.4)
       actionpack (= 5.2.4)
       activesupport (= 5.2.4)
@@ -422,6 +430,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  factory_bot_rails
   fog-aws
   font-awesome-sass
   haml-rails
@@ -437,6 +446,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.12)
   rails (~> 5.2.4)
+  rails-i18n
   ransack
   rspec-rails
   rubocop
