@@ -1,13 +1,8 @@
-.logo-header
-  .logo-header__img
-    = link_to "#" do
-      = image_tag 'fmarket_logo_red.svg'
-
 .sell-main
   %h2.sell-main__title.bolb
     商品の情報を入力
-
-  .sell-main__form
+  = form_with model: @item, local: true, url: items_path, method: 'POST', class: 'sell-main__form' do |f|
+    //商品画像、投稿エリア↓↓↓
     .sell-main__form__upload
       %h3.sell-main__form__upload__head.bolb
         出品画像
@@ -15,91 +10,135 @@
         必須
       %p
         最大10枚までアップロードできます
-      .sell-main__form__upload__box
-        .sell-main__form__upload__box__text
+      //ファイルフィールド（画像アップロード）↓↓↓
+      = f.label :images do
+        .sell-main__form__upload__box
           ドラッグアンドドロップ
           %br
           またはクリックしてファイルをアップロード
-        .sell-main__form__upload__box__images
-
+          = f.file_field :images,multiple: true, class: 'file_field'
     .sell-main__form__content
+      //商品名、入力エリア↓↓↓
       .sell-main__form__content__box-label--first
         %label.bolb
           商品名
         %span.form-require
           必須
-      .sell-main__form__content__box
-        %input{ name: "item-name", type: "text_field", placeholder: "商品名（必須 40文字まで)", class: "sell-main__form__content__text-field" }
+      = f.text_field :item_name,
+          placeholder: "商品名（必須 40文字まで)",
+          autofocus: true, class: 'sell-main__form__content__text-field'
+      //商品説明、入力エリア↓↓↓
       .sell-main__form__content__box-label
         %label.bolb
           商品の説明
         %span.form-require
           必須
-      .sell-main__form__content__box
-        %textarea{ name: "item-description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "sell-main__form__content__text-area" }
-
+      = f.text_area :explain,
+          placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",
+          autofocus: true,
+          class: 'sell-main__form__content__text-area'
     .sell-main__form__content.space-between
       %h3.sell-main__form__content__head.bolb
         商品の詳細
       .sell-main__form__content__right
+        //カテゴリ、選択エリア↓↓↓
         .sell-main__form__content__form-label--first
           %label.bolb
             カテゴリー
           %span.form-require
             必須
-        .sell-main__form__content__form
-          %select{ name: "category", class: "sell-main__form__content__select" }
-            %option --
-            %option レディース
-            %option メンズ
+        = f.select :category,
+          [["レディース", "レディース"],
+            ["メンズ", "メンズ"]],
+          { prompt: "--" },
+          { autofocus: 'true',
+            class: "sell-main__form__content__select" }
+        //サイズ、選択エリア↓↓↓
+        .sell-main__form__content__form-label
+          %label.bolb
+            サイズ
+          %span.form-require
+            必須
+        = f.select :size,
+          [["S", "S"],
+           ["M", "M"],
+           ["L", "L"]],
+          { prompt: "--" },
+          { autofocus: 'true',
+            class: "sell-main__form__content__select" }
+        //ブランド、入力エリア↓↓↓
+        .sell-main__form__content__form-label
+          %label.bolb
+            ブランド
+          %span.form-arbitrary
+            任意
+        = f.text_field :brand,
+            placeholder: "例）シャネル",
+            autofocus: true, class: 'sell-main__form__content__select'
+        //商品の状態、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
             商品の状態
           %span.form-require
             必須
-        .sell-main__form__content__box
-          %select{ name: "condition", class: "sell-main__form__content__select" }
-            %option --
-            %option 新品、未使用
-            %option 未使用に近い
-
+        = f.select :condition,
+          [["新品、未使用", "新品、未使用"],
+           ["未使用に近い", "未使用に近い"]],
+          { prompt: "--" },
+          { autofocus: 'true',
+            class: "sell-main__form__content__select" }
     .sell-main__form__content.space-between
       %h3.sell-main__form__content__head.bolb
         配送について
         %span.form-question
           ?
       .sell-main__form__content__right
+        //配送料の負担、選択エリア↓↓↓
         .sell-main__form__content__form-label--first
           %label.bolb
             配送料の負担
           %span.form-require
             必須
-        .sell-main__form__content__form
-          %select{ name: "burden", class: "sell-main__form__content__select" }
-            %option --
-            %option 送料込み(出品者負担)
-            %option 着払い(購入者負担)
+        = f.select :postage,
+          [["送料込み(出品者負担)", "送料込み(出品者負担)"],
+           ["着払い(購入者負担)", "着払い(購入者負担)"]],
+          { prompt: "--" },
+          { autofocus: 'true',
+            class: "sell-main__form__content__select" }
+        //発送の方法、選択エリア↓↓↓
+        .sell-main__form__content__form-label
+          %label.bolb
+            発送の方法
+          %span.form-require
+            必須
+        = f.select :shipping_method,
+          [["未定", "未定"],
+           ["らくらくメルカリ便", "らくらくメルカリ便"]],
+          { prompt: "--" },
+          { autofocus: 'true',
+            class: "sell-main__form__content__select" }
+        //発送元の地域、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
             発送元の地域
           %span.form-require
             必須
-        .sell-main__form__content__box
-          %select{ name: "prefecture", class: "sell-main__form__content__select" }
-            %option --
-            %option 北海道
-            %option 青森県
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name,
+         { prompt: "--" },
+         { class: 'sell-main__form__content__select' }
+        //発送までの日数、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
             発送までの日数
           %span.form-require
             必須
-        .sell-main__form__content__box
-          %select{ name: "days", class: "sell-main__form__content__select" }
-            %option --
-            %option 1~2日で発送
-            %option 2~3日で発送
-            %option 4~7日で発送
+        = f.select :shipping_days,
+         [["1~2日で発送", "1~2日で発送"],
+          ["2~3日で発送", "2~3日で発送"],
+          ["4~7日で発送", "4~7日で発送"]],
+         { prompt: "--" },
+         { autofocus: 'true',
+           class: "sell-main__form__content__select" }
 
     .sell-main__form__content.space-between
       %h3.sell-main__form__content__head.bolb
@@ -107,6 +146,7 @@
         %span.form-question
           ?
       %ul.sell-main__form__content__right
+        //配送料の負担エリア↓↓↓
         %li.sell-main__form__content__price-first.space-between
           .sell-main__form__content__price-first__label-input
             %label.bolb
@@ -115,13 +155,18 @@
               必須
           .sell-main__form__content__price-first__input
             ¥
-            %input{ name: "item-name", type: "text_field", placeholder: "例）300", class: "sell-main__form__content__price-first__text-field" }
+            //入力エリア↓↓↓
+            = f.text_field :price, placeholder: "例）300",
+              autofocus: true,
+              class: 'sell-main__form__content__price-first__text-field'
+        //販売手数料エリア↓↓↓
         %li.sell-main__form__content__price.space-between
           .sell-main__form__content__price__label-fee
             %label
               販売手数料(10%)
           .sell-main__form__content__price__fee
             ー
+        //販売利益エリア↓↓↓
         %li.sell-main__form__content__price.space-between.bolb
           .sell-main__form__content__price__label-profit
             %label
@@ -143,21 +188,6 @@
         %a{ href:'#' }>加盟店規約
         に同意したことになります。
       .sell-main__form__content__box
-        .sell-main__form__content__box__text
-          %input{ type: "submit", value: "出品する", class: "submit-btn__go" }
-        .sell-main__form__content__box__images
-          %input{ type: "submit", value: "もどる", class: "submit-btn__back" }
-
-.footer-simple
-  .footer-simple__list
-    %a
-      プライバシーポリシー
-    %a.footer-simple__list__margin
-      メルカリ利用規約
-    %a.footer-simple__list__margin
-      特定商取引に関する表記
-  .footer-simple__img
-    = link_to "#" do
-      = image_tag 'logo_gray.svg'
-  .footer-simple__copyright
-    &copy; Fmarket, Inc.
+        = f.submit value: "出品する", class: 'submit-btn__go'
+        = link_to :back, class: 'submit-btn__back' do
+          もどる
