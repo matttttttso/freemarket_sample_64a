@@ -1,0 +1,87 @@
+=render "main_header"
+
+.item-box-container
+  .h1.item-name ホークママのキーホルダー
+  %p.item-wording
+  ホークママのキーホルダーを出品したのは、
+  %span
+    = link_to "ホークママ", "#"
+  です。
+  %span
+    = link_to "アニメ/本・音楽・ゲーム", "#"
+  の商品で、リオネス王国から4~7日で発送されます。
+  .item-main-content
+    .item-photo
+      .item-photo__carousel
+        .item-photo__carousel__outer
+          = image_tag 'hawk.jpg'
+          .item-photo__carousel__outer__disabled
+        .outer-dots
+          .outer-dots__1
+            = image_tag 'hawk.jpg'
+          .outer-dots__2
+            = image_tag 'hawk.jpg'
+          .outer-dots__3
+            = image_tag 'hawk.jpg'
+          .outer-dots__4
+            = image_tag 'hawk.jpg'
+          .outer-dots__5
+            = image_tag 'hawk.jpg'
+
+    %table.item-detail-table
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            %a{href: "#"} 初代妖精王
+            %span
+              .item-user-ratings
+                %i.far.fa-grin
+                %span 13
+              .item-user-ratings
+                %i.far.fa-frown
+                %span 0
+              .item-user-ratings
+                %i.far.fa-frown
+                %span 0
+        %tr
+          %th カテゴリー
+          %td
+            %a{href: "#"}
+              %div 本・音楽・ゲーム
+            %a{href: "#"}
+              .item-detail-table-sub-category
+                %i.icon-arrow-right
+                DVD/ブルーレイ
+            %a{href: "#"}
+              .item-detail-table-sub-sub-category
+                %i.icon-arrow-right
+                アニメ
+        %tr
+          %th ブランド
+          %td
+            %a{href: "#"}
+              %div ナイキ
+        %tr
+          %th 商品の状態
+          %td 目立った傷や汚れなし
+        %tr
+          %th 配送料の負担
+          %td 送料込み(出品者負担)
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送元地域
+          %td
+            %a{href: "#"} 静岡県
+        %tr
+          %th 発送日の目安
+          %td 4~7日で発送
+
+  .item-price-box
+  .item-buy-btn
+  .item-description
+  .item-button-container
+
+=render "main_footer"

@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "review_users#toppage"
+  # root to: "review_users#toppage"
+  root to: "show#detail_content"
 
   resource :review_users, :review_items, only: [:index, :show]
   
