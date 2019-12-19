@@ -78,7 +78,7 @@ class SignupController < ApplicationController
       birthdate_month: session[:birthdate_month],
       birthdate_day: session[:birthdate_day],
       # 未入力項目にはバリデーションに通る値を入れる
-      phone_number: "09012345678"
+      phone_number: "00000000000"
     )
     render :step1 unless @user.valid?
   end
