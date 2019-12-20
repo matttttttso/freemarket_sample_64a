@@ -192,8 +192,7 @@
   }
   .item-buy-btn{
     font-size: 24px;
-    line-height: 60px;
-    height: 60px;
+    height: 80px;
     background: #e62017;
     color: #fff;
     text-decoration: none;
@@ -205,6 +204,7 @@
     a{
       text-decoration: none;
       touch-action: manipulation;
+      color: #fff;
     }
   }
   .item-description{
