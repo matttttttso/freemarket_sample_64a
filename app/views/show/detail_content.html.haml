@@ -37,16 +37,16 @@
             %span
               .item-user-ratings
                 %i.far.fa-grin
-                %span 13
+                %span 1
               .item-user-ratings
                 %i.far.fa-frown
                 %span 0
               .item-user-ratings
-                %i.far.fa-frown
+                %i.far.fa-tired
                 %span 0
         %tr
           %th カテゴリー
-          %td
+          %td.item-detail-main-category
             %a{href: "#"}
               %div 本・音楽・ゲーム
             %a{href: "#"}
@@ -62,6 +62,7 @@
           %td
             %a{href: "#"}
               %div ナイキ
+                
         %tr
           %th 商品の状態
           %td 目立った傷や汚れなし
@@ -79,9 +80,28 @@
           %th 発送日の目安
           %td 4~7日で発送
 
-  .item-price-box
-  .item-buy-btn
+  .item-price-box.text-center
+    %span.item-price.bold ¥5,000
+    %span.item-tax (税込)
+    %span.item-shipping-fee 送料込み
+  %a.item-buy-btn{href: "#"}
+    購入画面に進む
+
   .item-description
+  %p.item-description-inner これを見たあなた！買いたくなりましたよね。いつ買うの？！
+
   .item-button-container
+    .item-button-container__left
+      %button.item-button.item-button-like
+        %i.far.fa-heart
+        %span いいね!
+        %span.fade-in-down 5
+      %a.item-button-report
+        %i.fas.fa-flag
+        %span 不適切な商品の報告
+      
+    .item-button-right
+      %i.fas.fa-user-lock
+      %span あんしん・あんぜんへの取り組み
 
 =render "main_footer"
