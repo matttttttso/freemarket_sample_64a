@@ -153,7 +153,6 @@
             border-style: solid;
             border-width: 0;
             color: currentColor;
-            display: grid;
             span{
               display: flex;
               .item-user-ratings{
@@ -199,12 +198,10 @@
     color: #fff;
     text-decoration: none;
     opacity: 1;
-    color: #fff;
     text-align: center;
     font-weight: 600;
     transition: all ease-out .3s;
     padding: 3% 40%;
-    text-align: center;
     a{
       text-decoration: none;
       touch-action: manipulation;
@@ -263,7 +260,6 @@
       text-decoration: none;
       touch-action: manipulation;
       cursor: pointer;
-      font-size: 14px;
       display: inline-block;
       vertical-align: middle;
     }
