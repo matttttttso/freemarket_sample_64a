@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-
+  
   root to: "show#index"
 
   resources :items, only: [:index, :create] do
