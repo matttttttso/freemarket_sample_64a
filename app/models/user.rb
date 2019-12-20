@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
   has_one :address
+  has_one :credit_card
   accepts_nested_attributes_for :address
 
 
