@@ -14,9 +14,14 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
+  
+  root to: "show#index"
 
-  # root to: "review_users#toppage"
-  root to: "show#detail_content"
+  resources :items, only: [:index, :create] do
+    collection do
+      get 'sell'
+    end
+  end
 
   resource :review_users, :review_items, only: [:index, :show]
   
