@@ -34,18 +34,6 @@ vertical-align: top;
 }
 // ここまで繰り返し使いたいやつ
 
-.logo-header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 128px;
-  &__img{
-    width: 185px;
-    height: 55px;
-  }
-}
-
 .sell-main{
   width: 100%;
   &__title{
@@ -76,17 +64,15 @@ vertical-align: top;
         background-color: #eee;
         border: 1px dashed #ccc;
         padding: 40px;
-        text-align: center;
         min-height: 162px;
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        &__text{
-          left: 16px;
-          right: 16px;
-          text-align: center;
-          line-height: 1.5;
+        text-align: center;
+        font-size: 14px;
+        .file_field{
+          display: none;
         }
       }
     }
@@ -197,32 +183,5 @@ vertical-align: top;
         }
       }
     }
-  }
-}
-
-.footer-simple{
-  width: 456px;
-  height: 220px;
-  margin: 0 auto;
-  padding: 40px 0;
-  text-align: center;
-  a{
-    font-size: 12px;
-  }
-  &__list{
-    &__margin{
-      margin: 0 0 0 16px;
-    }
-  }
-  &__img{
-    width: 80px;
-    height: 65px;
-    vertical-align: middle;
-    display: inline-block;
-    margin: 40px auto 0;
-  }
-  &__copyright{
-    font-size: 13px;
-    margin: 8px 0 0;
   }
 }
