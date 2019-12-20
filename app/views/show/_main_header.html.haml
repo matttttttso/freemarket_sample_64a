@@ -15,7 +15,11 @@
           .left-header-bottom__brand
             = link_to 'ブランドから探す', '#',class: "brand_btn"
         .right-header-bottom
-          .top-new-sign-up-btn
-            = link_to '新規登録', signup_index_path, method: :get, class: "top-new-sign-up-btn__logo"
-          .top-log-in
-            = link_to 'ログイン', '#',class: "top-log-in__logo"
+          - if user_signed_in?
+            .top-log-in
+              = link_to 'マイページ', mypage_review_users_path, class: "top-log-in__logo"
+          - else
+            .top-new-sign-up-btn
+              = link_to '新規登録', signup_index_path, method: :get, class: "top-new-sign-up-btn__logo"
+            .top-log-in
+              = link_to 'ログイン', login_signup_index_path, class: "top-log-in__logo"
