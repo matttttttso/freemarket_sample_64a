@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'step3'
       # get 'step4' クレジットカードの登録は購入機能作成の際に同時に行う
       get 'done'
+      get 'logout'
     end
   end
   
