@@ -188,6 +188,7 @@
         %a{ href:'#' }>加盟店規約
         に同意したことになります。
       .sell-main__form__content__box
+        = f.hidden_field :trade_state, value: "出品中"
         = f.submit value: "出品する", class: 'submit-btn__go'
         = link_to :back, class: 'submit-btn__back' do
           もどる
