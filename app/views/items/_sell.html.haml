@@ -18,7 +18,7 @@
           またはクリックしてファイルをアップロード
           = f.file_field :images, multiple: true, class: 'file_field'
       - if @item.errors.full_messages_for(:images).any?
-        = render partial: 'error-message', locals: { item: @item, column: "images" }
+        = render 'error-message', item: @item, column: "images"
     .sell-main__form__content
       //商品名、入力エリア↓↓↓
       .sell-main__form__content__box-label--first
@@ -30,7 +30,7 @@
         placeholder: "商品名（必須 40文字まで)",
         autofocus: true, class: 'sell-main__form__content__text-field'
       - if @item.errors.full_messages_for(:item_name).any?
-        = render partial: 'error-message', locals: { item: @item, column: "item_name" }
+        = render 'error-message', item: @item, column: "item_name"
       //商品説明、入力エリア↓↓↓
       .sell-main__form__content__box-label
         %label.bolb
@@ -42,7 +42,7 @@
           autofocus: true,
           class: 'sell-main__form__content__text-area'
       - if @item.errors.full_messages_for(:explain).any?
-        = render partial: 'error-message', locals: { item: @item, column: "explain" }
+        = render 'error-message', item: @item, column: "explain"
     .sell-main__form__content.space-between
       %h3.sell-main__form__content__head.bolb
         商品の詳細
@@ -60,7 +60,7 @@
           { autofocus: 'true',
             class: "sell-main__form__content__select" }
         - if @item.errors.full_messages_for(:category).any?
-          = render partial: 'error-message', locals: { item: @item, column: "category" }
+          = render 'error-message', item: @item, column: "category"
         //サイズ、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
@@ -75,7 +75,7 @@
           { autofocus: 'true',
             class: "sell-main__form__content__select" }
         - if @item.errors.full_messages_for(:size).any?
-          = render partial: 'error-message', locals: { item: @item, column: "size" }
+          = render 'error-message', item: @item, column: "size"
         //ブランド、入力エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
@@ -98,7 +98,7 @@
           { autofocus: 'true',
             class: "sell-main__form__content__select" }
         - if @item.errors.full_messages_for(:condition).any?
-          = render partial: 'error-message', locals: { item: @item, column: "condition" }
+          = render 'error-message', item: @item, column: "condition"
     .sell-main__form__content.space-between
       %h3.sell-main__form__content__head.bolb
         配送について
@@ -118,7 +118,7 @@
           { autofocus: 'true',
             class: "sell-main__form__content__select" }
         - if @item.errors.full_messages_for(:postage).any?
-          = render partial: 'error-message', locals: { item: @item, column: "postage" }
+          = render 'error-message', item: @item, column: "postage"
         //発送の方法、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
@@ -132,7 +132,7 @@
           { autofocus: 'true',
             class: "sell-main__form__content__select" }
         - if @item.errors.full_messages_for(:shipping_method).any?
-          = render partial: 'error-message', locals: { item: @item, column: "shipping_method" }
+          = render 'error-message', item: @item, column: "shipping_method"
         //発送元の地域、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
@@ -143,7 +143,7 @@
          { prompt: "--" },
          { class: 'sell-main__form__content__select' }
         - if @item.errors.full_messages_for(:prefecture_id).any?
-          = render partial: 'error-message', locals: { item: @item, column: "prefecture_id" }
+          = render 'error-message', item: @item, column: "prefecture_id"
         //発送までの日数、選択エリア↓↓↓
         .sell-main__form__content__form-label
           %label.bolb
@@ -158,7 +158,7 @@
          { autofocus: 'true',
            class: "sell-main__form__content__select" }
         - if @item.errors.full_messages_for(:shipping_days).any?
-          = render partial: 'error-message', locals: { item: @item, column: "shipping_days" }
+          = render 'error-message', item: @item, column: "shipping_days"
 
     .sell-main__form__content.space-between
       %h3.sell-main__form__content__head.bolb
@@ -180,7 +180,7 @@
               autofocus: true,
               class: 'sell-main__form__content__price-first__text-field'
             - if @item.errors.full_messages_for(:price).any?
-              = render partial: 'error-message', locals: { item: @item, column: "price" }
+              = render 'error-message', item: @item, column: "price"
         //販売手数料エリア↓↓↓
         %li.sell-main__form__content__price.space-between
           .sell-main__form__content__price__label-fee
