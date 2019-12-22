@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_095836) do
+ActiveRecord::Schema.define(version: 2019_12_21_111139) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -74,16 +74,9 @@ ActiveRecord::Schema.define(version: 2019_12_20_095836) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "trade_states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "trade_state", null: false
     t.integer "buyer_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_trade_states_on_item_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -114,5 +107,4 @@ ActiveRecord::Schema.define(version: 2019_12_20_095836) do
   add_foreign_key "addresses", "users"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "items", "users"
-  add_foreign_key "trade_states", "items"
 end
