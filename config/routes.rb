@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  root to: "show#index"
+
   devise_scope :user do
     delete :sign_out, to: 'devise/sessions#destroy'
   end
@@ -15,8 +17,15 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
-  
-  root to: "show#index"
+
+  resources :card, only: [:new, :show] do
+    collection do
+      get 'confirmation', to: 'card#confirmation'
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 
   resources :items, only: [:index, :create] do
     collection do
