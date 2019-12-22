@@ -17,6 +17,8 @@
           %br
           またはクリックしてファイルをアップロード
           = f.file_field :images, multiple: true, class: 'file_field'
+      - if @item.errors.full_messages_for(:images).any?
+        = render partial: 'error-message', locals: { item: @item, column: "images" }
     .sell-main__form__content
       //商品名、入力エリア↓↓↓
       .sell-main__form__content__box-label--first
