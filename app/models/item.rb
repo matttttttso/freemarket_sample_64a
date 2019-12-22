@@ -16,13 +16,19 @@ class Item < ApplicationRecord
 
   validate :images_presence
 
+  private
+
   def images_presence
     if images.attached?
-      if !images.content_type.in?(%('image/jpeg image/png'))
-        errors.add(:images, 'にはjpegまたはpngファイルを添付してください')
+      images.each do |image|
+        if !image.content_type.in?(%('image/jpg image/jpeg image/png'))
+          image.purge
+          errors.add(:images, 'には画像ファイルを添付してください')
+        end
       end
     else
       errors.add(:images, '画像がありません')
     end
   end
+  
 end
