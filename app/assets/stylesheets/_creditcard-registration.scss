@@ -76,3 +76,36 @@
   display: block;
   clear: both;
 }
+
+.card-form{
+  padding: 0 40px 64px;
+  font-size: 14px;
+  background-color: #fff;
+
+  a{
+    color: #0099e8;
+  }
+
+  &__content{
+    width: 343px;
+    margin: 0 auto;
+    padding: 32px 0 0;
+
+    img{
+      margin-top: 5px;
+      width: 30px; height: 30px;
+      object-fit: contain;
+    }
+
+    &__division{
+      width: 343px;
+      display: flex;
+    }
+
+    .submit-btn{
+      margin: 32px 0;
+      @include submit();
+      @include submit-red();
+    }
+  }
+}
