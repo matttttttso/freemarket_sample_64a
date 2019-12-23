@@ -1,11 +1,12 @@
 class CardController < ApplicationController
   require "payjp"
+  before_action :set_card, only: [:delete, :show, :confirmation]
+  before_action :set_payjp_info, only: [:pay, :delete, :show]
 
   def new
   end
 
   def pay
-    Payjp.api_key = ENV.fetch("PAYJP_PRIVATE_KEY")
     if params['payjp-token'].blank?
       redirect_to action: "confirmation"
     else
@@ -22,30 +23,35 @@ class CardController < ApplicationController
   end
 
   def delete
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
     else
-      Payjp.api_key = ENV.fetch("PAYJP_PRIVATE_KEY")
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
       redirect_to action: "confirmation"
   end
 
   def show
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       redirect_to action: "confirmation" 
     else
-      Payjp.api_key = ENV.fetch("PAYJP_PRIVATE_KEY")
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   def confirmation
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    redirect_to action: "show" if @card.present?
+  end
+
+  private
+
+  def set_card
+    @card = current_user.card
+  end
+
+  def set_payjp_info
+    Payjp.api_key = ENV.fetch("PAYJP_PRIVATE_KEY")
   end
 end
