@@ -22,26 +22,8 @@
           .item-photo__carousel__outer__disabled
         .outer-dots
           .outer-dots__1
-            - if @item.images.attached?
-              - @item.images.each do |image|
-                = image_tag image, class:"outer-dots__1"
-          .outer-dots__2
-            - if @item.images.attached?
-              - @item.images.each do |image|
-                = image_tag image, class:"outer-dots__2"
-          .outer-dots__3
-            - if @item.images.attached?
-              - @item.images.each do |image|
-                = image_tag image, class:"outer-dots__3"
-          .outer-dots__4
-            - if @item.images.attached?
-              - @item.images.each do |image|
-                = image_tag image, class:"outer-dots__4"
-          .outer-dots__5
-            - if @item.images.attached?
-              - @item.images.each do |image|
-                = image_tag image, class:"outer-dots__5"
-
+            - @item.images.each.with_index do |image, i|
+              = image_tag image, class:"outer-dots__1"
     %table.item-detail-table
       %tbody
         %tr
@@ -63,13 +45,16 @@
           %td.item-detail-main-category
             = link_to "#{@item.category}", "#"
             .item-detail-table-sub-category
-              = link_to "DVD/ブルーレイ", "#"
+              = link_to "その他", "#"
             .item-detail-table-sub-sub-category
-              = link_to "アニメ", "#"
+              = link_to "その他", "#"
         %tr
           %th ブランド
           %td
             = link_to "#{@item.brand}", "#"
+        %tr
+          %th 商品のサイズ
+          %td #{@item.size}
         %tr
           %th 商品の状態
           %td #{@item.condition}
@@ -90,7 +75,7 @@
   .item-price-box.text-center
     %span.item-price.bold ¥#{@item.price}
     %span.item-tax (税込)
-    %span.item-shipping-fee 送料込み
+    %span.item-shipping-fee #{@item.postage}
   .item-buy-btn
     = link_to "購入画面に進む", "#"
 
@@ -111,4 +96,3 @@
       %span あんしん・あんぜんへの取り組み
 
 = render "main_footer"
-

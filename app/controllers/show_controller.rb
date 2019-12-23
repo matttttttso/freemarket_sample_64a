@@ -8,9 +8,7 @@ class ShowController < ApplicationController
     @address = Address.find_by(params[:id])
     @image = Item.find_by(params[:id])
     @prefecture = Prefecture.find_by(id: @address.prefecture_id)
-    # @active_storage_blob = Active_storage_blob.find_by(params[:id])
-    # モデル作成する必要があるかも
-    # @image = Item.find_by(params[:id])
+    
   end
 
   
