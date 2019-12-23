@@ -21,6 +21,14 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :create] do
     collection do
       get 'sell'
+      get 'purchase'
+    end
+  end
+
+  resources :show do
+    collection do
+      get 'detail_content'
+      get 'creditcard-registration'
     end
   end
 
