@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   
   root to: "show#index"
 
-  resources :items, except: :destroy do
+  resources :items, except: [:new, :destroy] do
     collection do
       get 'sell'
     end
