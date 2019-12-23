@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "show#index"
+  
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   devise_scope :user do
@@ -15,8 +17,6 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
-  
-  root to: "show#index"
 
   resources :items, only: [:index, :create] do
     collection do
