@@ -18,7 +18,6 @@
           - if @item.images.attached?
             - @item.images.each do |image|
               = image_tag image, class:"item-photo__carousel__outer"
-          -# = image_tag("#{rails_blob_path active_storage_blob.key}")
           .item-photo__carousel__outer__disabled
         .outer-dots
           .outer-dots__1
