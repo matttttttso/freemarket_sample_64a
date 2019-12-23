@@ -4,7 +4,7 @@ class CardController < ApplicationController
   def new
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
+  def pay
     Payjp.api_key = ENV.fetch("PAYJP_PRIVATE_KEY")
     if params['payjp-token'].blank?
       redirect_to action: "confirmation"
@@ -21,7 +21,7 @@ class CardController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
+  def delete
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -33,7 +33,7 @@ class CardController < ApplicationController
       redirect_to action: "confirmation"
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+  def show
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "confirmation" 
