@@ -16,7 +16,15 @@ Rails.application.routes.draw do
     end
   end
   
-  root to: "show#index"
+  root to: "show#detail_content"
+
+  
+  resources :show, only: [:show] do
+    collection do
+      get 'detail_content'
+    end
+  end
+
 
   resources :items, only: [:index, :create] do
     collection do
