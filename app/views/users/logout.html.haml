@@ -1,7 +1,7 @@
 .wrapper
   = render 'show/main_header'
   .mypage-wrapper
-    = render "users/mypage-side-bar"
+    = render "mypage-side-bar"
     .logout-submit
       .logout-submit__bar
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-submit__bar logout-submit__bar__red submit'
