@@ -1,7 +1,10 @@
+.registration-wrapper
+  = render "shared/sub-header"
+
 .sell-main
   %h2.sell-main__title.bolb
     商品の情報を入力
-  = form_with model: @item, local: true, url: items_path, method: 'POST', class: 'sell-main__form' do |f|
+  = form_with model: @item, local: true, url: item_path, class: 'sell-main__form' do |f|
     //商品画像、投稿エリア↓↓↓
     .sell-main__form__upload
       %h3.sell-main__form__upload__head.bolb
@@ -13,10 +16,15 @@
       //ファイルフィールド（画像アップロード）↓↓↓
       = f.label :images do
         .sell-main__form__upload__box
+          - if @item.images.attached?
+            - @item.images.each do |image|
+              = image_tag image.variant(resize: "150x150")
+              %br/
           ドラッグアンドドロップ
           %br
           またはクリックしてファイルをアップロード
           = f.file_field :images, multiple: true, class: 'file_field'
+
       - if @item.errors.full_messages_for(:images).any?
         = render 'error-message', item: @item, column: "images"
     .sell-main__form__content
@@ -218,21 +226,11 @@
           .sell-main__form__content__price__profit
             ー
     .sell-main__form__content
-      %p
-        %a{ href:'#' }>禁止されている出品
-        、
-        %a{ href:'#' }>行為
-        を必ずご確認ください。
-      %p
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        %a{ href:'#' }>偽ブランドの販売
-        は犯罪であり処罰される可能性があります。
-      %p
-        また、出品をもちまして
-        %a{ href:'#' }>加盟店規約
-        に同意したことになります。
       .sell-main__form__content__box
         = f.hidden_field :trade_state, value: "出品中"
-        = f.submit value: "出品する", class: 'submit-btn__go'
+        = f.submit value: "更新する", class: 'submit-btn__go'
         = link_to :back, class: 'submit-btn__back' do
           もどる
+
+.registration-wrapper
+  = render "shared/sub-footer"

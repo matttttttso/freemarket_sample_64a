@@ -1,0 +1,8 @@
+-# 仮で一覧を作成
+- @items.each do |item|
+  %tr
+    %td= link_to 'Show', item
+    %td= item.item_name
+    %td= link_to 'Edit', edit_item_path(item)
+    %br/
+    -# %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
