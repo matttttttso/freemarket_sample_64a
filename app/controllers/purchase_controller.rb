@@ -21,8 +21,11 @@ class PurchaseController < ApplicationController
     customer: @card.customer_id,
     currency: 'jpy'
   )
-  @item.update(trade_state: '売却済み')
-  redirect_to action: 'done'
+    if @item.update(trade_state: '売却済み', buyer_id: current_user.id)
+      redirect_to action: 'done'
+    else
+      redirect_to action: 'index'
+    end
   end
 
   def done
