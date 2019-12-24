@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  # root
   root to: "show#index"
-  
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  root to: "show#index"
+  # devise
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   devise_scope :user do
     delete :sign_out, to: 'devise/sessions#destroy'
@@ -11,6 +11,15 @@ Rails.application.routes.draw do
   end
   
 
+  # show_controller
+  resources :show do
+    collection do
+      get 'detail_content'
+      get 'creditcard-registration'
+    end
+  end
+
+  # signup_controller
   resources :signup, only: [:index, :create] do
     collection do
       get 'step1'
@@ -18,11 +27,20 @@ Rails.application.routes.draw do
       get 'step3'
       # get 'step4' クレジットカードの登録は購入機能作成の際に同時に行う
       get 'done'
+    end
+  end
+
+  # user_controller
+  resource :users, only: :index do
+    collection do
+      get 'mypage'
+      get 'profile'
+      get 'identity'
       get 'logout'
     end
   end
 
-
+  # card_controller
   resources :card, only: [:new, :show] do
     collection do
       get 'confirmation', to: 'card#confirmation'
@@ -32,8 +50,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, except: [:new, :destroy] do
 
+  # items_controller
+  resources :items do
     collection do
       get 'sell'
       get 'purchase'
@@ -47,37 +66,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resources :show do
-    collection do
-      get 'detail_content'
-      get 'creditcard-registration'
-    end
-  end
-
-  resource :review_users, :review_items, only: [:index, :show]
-  
-  resource :review_users do
-    collection do
-      get 'login'
-      get 'signup'
-      get 'basic_info'
-      get 'phone_num'
-      get 'phone_num2'
-      get 'address'
-      get 'creditcard'
-      get 'completion'
-      get 'mypage'
-      get 'profile'
-      get 'identity'
-      get 'logout'
-    end
-  end
-
-  resource :review_items do
-    collection do
-      get 'sell'
-    end
-  end
-  
 end

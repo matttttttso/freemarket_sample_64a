@@ -1,0 +1,46 @@
+= render 'show/main_header'
+.mypage-wrapper
+  = render 'mypage-side-bar'
+  .mypage-main
+    %section.mypage-main__user-icon
+      = link_to "#" do
+        = image_tag 'member_photo_noimage_thumb.png'
+        %h2.bolb おもち
+        .number
+          %p
+            評価
+            %span.bolb 0
+          %p
+            出品数
+            %span.bolb 0
+
+    %section.mypage-main__container
+      .tabs
+        %input#info{ checked: "checked", name: "tab-radio", type: "radio" }
+        %label.tab-content{ for: "info" } お知らせ
+        %input#todo{ name: "tab-radio", type: "radio" }
+        %label.tab-content{ for: "todo" } やることリスト
+        .clear-shadow
+        .mypage-main__container__content.info
+          .mypage-main__container__content__none.bolb
+            現在、お知らせはありません
+        .mypage-main__container__content.todo
+          .mypage-main__container__content__none.bolb
+            現在、やることリストはありません
+
+    %section.mypage-main__container
+      %h2.mypage-main__container__title.bolb
+        購入した商品
+      .tabs
+        %input#trade{ checked: "checked", name: "tab-check", type: "radio" }
+        %label.tab-content{ for: "trade" } 取引中
+        %input#completion{ name: "tab-check", type: "radio" }
+        %label.tab-content{ for: "completion" } 過去の取引
+        .clear-shadow
+        .mypage-main__container__content.trade
+          .mypage-main__container__content__none.bolb
+            取引中の商品がありません
+        .mypage-main__container__content.completion
+          .mypage-main__container__content__none.bolb
+            過去に取引した商品がありません
+= render 'show/main_footer'
