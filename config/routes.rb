@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     delete :sign_out, to: 'devise/sessions#destroy'
+    
   end
+  
 
   # show_controller
   resources :show do
@@ -47,6 +49,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
 
   # items_controller
   resources :items do
