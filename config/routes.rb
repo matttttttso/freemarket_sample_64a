@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :details, only: [:index, :show] do
     collection do
-      get 'details/:id' => 'show#detail_content'
+      get 'details/:id':'show#detail_content'
     end
   end
 
