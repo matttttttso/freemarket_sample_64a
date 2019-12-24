@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2019_12_22_073741) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_name", null: false
     t.text "explain", null: false
@@ -77,6 +86,15 @@ ActiveRecord::Schema.define(version: 2019_12_22_073741) do
     t.string "trade_state", null: false
     t.integer "buyer_id"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "trade_states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "trade_state", null: false
+    t.integer "buyer_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_trade_states_on_item_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -106,5 +124,7 @@ ActiveRecord::Schema.define(version: 2019_12_22_073741) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "credit_cards", "users"
   add_foreign_key "items", "users"
+  add_foreign_key "trade_states", "items"
 end
