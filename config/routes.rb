@@ -32,8 +32,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :items, except: [:new, :destroy] do
 
-  resources :items, only: [:index, :create] do
     collection do
       get 'sell'
       get 'purchase'
