@@ -3,7 +3,7 @@
     .header__content
       .header-up-content
         .header-up-content__logo
-          = link_to image_tag('fmarket_logo_red.svg'), '#'
+          = link_to image_tag('fmarket_logo_red.svg'), root_path
         .header-up-content__form
           %input.header-up-content__form-area{ name: "keyword", placeholder: "何かお探しですか？", type: "search", value: "" }
             %a.header-up-content__form-btn
@@ -17,7 +17,7 @@
         .right-header-bottom
           - if user_signed_in?
             .top-log-in
-              = link_to 'マイページ', mypage_review_users_path, class: "top-log-in__logo"
+              = link_to 'マイページ', mypage_users_path, class: "top-log-in__logo"
           - else
             .top-new-sign-up-btn
               = link_to '新規登録', signup_index_path, method: :get, class: "top-new-sign-up-btn__logo"
