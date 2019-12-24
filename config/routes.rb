@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     delete :sign_out, to: 'devise/sessions#destroy'
+    
   end
+  
 
   resources :signup, only: [:index, :create] do
     collection do
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :card, only: [:new, :show] do
     collection do
       get 'confirmation', to: 'card#confirmation'
@@ -30,6 +33,7 @@ Rails.application.routes.draw do
   end
 
   resources :items, except: [:new, :destroy] do
+
     collection do
       get 'sell'
       get 'purchase'
