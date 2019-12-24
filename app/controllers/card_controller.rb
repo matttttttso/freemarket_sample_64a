@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   require "payjp"
+  before_action :authenticate_user!
   before_action :set_card, only: [:delete, :show, :confirmation]
   before_action :set_payjp_info, only: [:pay, :delete, :show]
 
