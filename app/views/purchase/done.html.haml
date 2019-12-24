@@ -1,0 +1,53 @@
+.registration-wrapper
+  = render "/shared/sub-header"
+  %h2.single-head.bolb
+    購入が完了しました
+  .purchase-main
+    .purchase-main__content.text-center
+      = image_tag @item.images[0], width: 'auto', height: '80px'
+      %p.bolb
+        #{ @item.item_name }
+    .purchase-main__content.text-center
+      %p.bolb.pay
+        ￥#{ @item.price }
+    .purchase-main__content
+      .inner-box
+        .inner-box__left.bolb
+          配送先
+        .inner-box__right
+          = link_to "変更する", "#"
+      %p
+        〒 #{ @address.zip_code }
+        %br
+        #{ @address.prefecture.name + @address.city + @address.block + @address.building }
+        %br
+        #{ @address.family_name + @address.first_name }
+    .purchase-main__content
+      %p.bolb
+        支払い方法
+      %p
+        = image_tag 'jcb.svg', width: '26', height: '20', alt: 'jcb'
+        %br
+        = "**** **** **** " + @default_card_information.last4
+        %br
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        = exp_month + " / " + exp_year
+    .purchase-main__content.text-center
+      %p.bolb
+        発送通知後の流れ 
+      = icon 'fas', 'laugh'
+      = icon 'fas', 'meh'
+      = icon 'fas', 'frown'
+      %p
+        商品を受け取ったら
+        %br
+        出品者の評価をしましょう。
+        %br
+        購入代金が出品者に振り込まれます。
+        %br
+        評価後に取引は完了です。
+      %br
+      %p.bolb
+        = link_to "マイページへ戻る", "#"
+  = render "/shared/sub-footer"
