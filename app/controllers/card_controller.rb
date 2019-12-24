@@ -52,6 +52,6 @@ class CardController < ApplicationController
   end
 
   def set_payjp_info
-    Payjp.api_key = ENV.fetch("PAYJP_PRIVATE_KEY")
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
   end
 end
