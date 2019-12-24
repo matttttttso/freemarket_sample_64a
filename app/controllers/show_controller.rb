@@ -1,7 +1,7 @@
 class ShowController < ApplicationController
   def index
   end
- 	
+  
   def detail_content
     @item = Item.find(params[:id])
     @user = User.find(params[:id])
