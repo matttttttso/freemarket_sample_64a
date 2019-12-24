@@ -3,13 +3,10 @@ class ShowController < ApplicationController
   end
 
   def detail_content
-    @item = Item.find_by(params[:id])
-    @user = User.find_by(params[:id])
-    @address = Address.find_by(params[:id])
-    @image = Item.find_by(params[:id])
-    @prefecture = Prefecture.find_by(id: @address.prefecture_id)
-    
+    @item = Item.find(params[:id])
+    @user = User.find(params[:id])
+    @address = Address.find(params[:id])
+    @image = Item.find(params[:id])
+    @prefecture = Prefecture.find(id: @address.prefecture_id)
   end
-
-  
 end
