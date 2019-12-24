@@ -1,39 +1,34 @@
 = render "main_header"
 
 .item-box-container
-  .h1.item-name ホークママのキーホルダー
+  .h1.item-name
+    = @item.item_name
   %p.item-wording
-  ホークママのキーホルダーを出品したのは、
+  #{@item.item_name}を出品したのは、
   %span
-    = link_to "ホークママ", "#"
+    = link_to "#{@user.nickname}", "#"
   です。
   %span
-    = link_to "アニメ/本・音楽・ゲーム", "#"
-  の商品で、リオネス王国から4~7日で発送されます。
+    = link_to "#{@item.category}", "#"
+  の商品で、#{@prefecture.name}から#{@item.shipping_days}で発送されます。
   .item-main-content
     .item-photo
       .item-photo__carousel
         .item-photo__carousel__outer
-          = image_tag 'hawk.jpg'
+          - if @item.images.attached?
+            - @item.images.each do |image|
+              = image_tag image, class:"item-photo__carousel__outer"
           .item-photo__carousel__outer__disabled
         .outer-dots
           .outer-dots__1
-            = image_tag 'hawk.jpg'
-          .outer-dots__2
-            = image_tag 'hawk.jpg'
-          .outer-dots__3
-            = image_tag 'hawk.jpg'
-          .outer-dots__4
-            = image_tag 'hawk.jpg'
-          .outer-dots__5
-            = image_tag 'hawk.jpg'
-
+            - @item.images.each.with_index do |image, i|
+              = image_tag image, class:"outer-dots__1"
     %table.item-detail-table
       %tbody
         %tr
           %th 出品者
           %td
-            = link_to "初代妖精王", "#"
+            = link_to "#{@user.nickname}", "#"
             %span
               .item-user-ratings
                 %i.far.fa-grin
@@ -47,41 +42,44 @@
         %tr
           %th カテゴリー
           %td.item-detail-main-category
-            = link_to "本・音楽・ゲーム", "#"
+            = link_to "#{@item.category}", "#"
             .item-detail-table-sub-category
-              = link_to "DVD/ブルーレイ", "#"
+              = link_to "その他", "#"
             .item-detail-table-sub-sub-category
-              = link_to "アニメ", "#"
+              = link_to "その他", "#"
         %tr
           %th ブランド
           %td
-            = link_to "ナイキ", "#"
+            = link_to "#{@item.brand}", "#"
+        %tr
+          %th 商品のサイズ
+          %td #{@item.size}
         %tr
           %th 商品の状態
-          %td 目立った傷や汚れなし
+          %td #{@item.condition}
         %tr
           %th 配送料の負担
-          %td 送料込み(出品者負担)
+          %td #{@item.postage}
         %tr
           %th 配送の方法
-          %td らくらくメルカリ便
+          %td #{@item.shipping_method}
         %tr
           %th 配送元地域
           %td
-            = link_to "群馬県", "#"
+            = link_to "#{@prefecture.name}", "#"
         %tr
           %th 発送日の目安
-          %td 4~7日で発送
+          %td #{@item.shipping_days}
 
   .item-price-box.text-center
-    %span.item-price.bold ¥5,000
+    %span.item-price.bold ¥#{@item.price}
     %span.item-tax (税込)
-    %span.item-shipping-fee 送料込み
+    %span.item-shipping-fee #{@item.postage}
   .item-buy-btn
     = link_to "購入画面に進む", "#"
 
   .item-description
-  %p.item-description-inner これを見たあなた！買いたくなりましたよね。いつ買うの？！
+  %p.item-description-inner #{@item.explain}
 
   .item-button-container
     .item-button-container__left
@@ -97,4 +95,3 @@
       %span あんしん・あんぜんへの取り組み
 
 = render "main_footer"
-
