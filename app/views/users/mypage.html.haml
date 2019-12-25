@@ -8,7 +8,8 @@
     %section.mypage-main__user-icon
       = link_to "#" do
         = image_tag 'member_photo_noimage_thumb.png'
-        %h2.bolb おもち
+        %h2.bolb
+          = current_user.nickname
         .number
           %p
             評価
