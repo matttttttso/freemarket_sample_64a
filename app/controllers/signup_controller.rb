@@ -1,5 +1,5 @@
 class SignupController < ApplicationController
-
+  require "payjp"
   before_action :step1_valid, only: :step2
   before_action :step2_valid, only: :step3
 
@@ -36,16 +36,27 @@ class SignupController < ApplicationController
 
     if @user.save
       session[:id] = @user.id
-      redirect_to done_signup_index_path
+      redirect_to step4_signup_index_path
     else
       render :step3
     end
   end
 
-  # 上記で保存されたUserのidとPayjpでクレジットカードを紐付ける
-  # クレジットカードの登録は購入機能の作成の際に同時に行う
-  # def step4
-  # end
+  def step4
+  end
+
+  def pay
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    customer = Payjp::Customer.create(
+      card: params['payjp-token']
+    )
+    @card = Card.new(user_id: session[:id], customer_id: customer.id, card_id: customer.default_card)
+    if @card.save
+      redirect_to done_signup_index_path
+    else
+      redirect_to action: :pay
+    end
+  end
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
