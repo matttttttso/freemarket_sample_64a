@@ -194,21 +194,14 @@
     }
   }
   .item-buy-btn{
-    font-size: 24px;
-    height: 80px;
-    background: #e62017;
-    color: #fff;
-    text-decoration: none;
-    opacity: 1;
-    text-align: center;
-    font-weight: 600;
-    transition: all ease-out .3s;
-    padding: 3% 40%;
-    a{
-      text-decoration: none;
-      touch-action: manipulation;
-      color: #fff;
-    }
+    margin: 32px 0;
+    @include submit();
+    @include submit-red();
+  }
+  .item-buy-btn-gry{
+    margin: 32px 0;
+    @include submit();
+    @include submit-gray(100%);
   }
   .item-description{
     padding: 32px 0 0;

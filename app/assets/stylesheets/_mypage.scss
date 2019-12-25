@@ -92,6 +92,13 @@ body{
   color: #fff;
 }
 
+@mixin submit-gray($length){
+  background: #aaaaaa;
+  border: 1px solid #aaaaaa;
+  color: #fff;
+  width: $length;
+}
+
 // ユーザープロフィールの画像関連
 @mixin icon(){
   overflow: hidden;

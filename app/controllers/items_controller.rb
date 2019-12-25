@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # 後で実装
   end
 
   def sell
@@ -32,6 +31,14 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render :sell
+    end
+  end
+
+  def destroy
+    if@item.destroy
+      redirect_to items_url, notice: '商品を削除しました'
+    else
+      render
     end
   end
 

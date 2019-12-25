@@ -1,8 +1,9 @@
+.wrapper
+  = render 'show/main_header'
 .box
   - breadcrumb :logout
   = breadcrumbs separator: " &rsaquo; "
 .wrapper
-  = render 'show/main_header'
   .mypage-wrapper
     = render "mypage-side-bar"
     .logout-submit

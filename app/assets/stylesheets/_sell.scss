@@ -26,12 +26,6 @@ vertical-align: top;
   justify-content: space-between;
 }
 
-@mixin submit-gray(){
-  background: #aaaaaa;
-  border: 1px solid #aaaaaa;
-  color: #fff;
-  width: 45%;
-}
 // ここまで繰り返し使いたいやつ
 
 .sell-main{
@@ -99,7 +93,7 @@ vertical-align: top;
         &__back{
           margin: 24px auto 0;
           @include submit();
-          @include submit-gray();
+          @include submit-gray(45%);
           cursor: pointer;
         }
       }
