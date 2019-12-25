@@ -6,10 +6,10 @@
   %p.item-wording
   #{@item.item_name}を出品したのは、
   %span
-    = link_to "#{@item.user.nickname}", "#"
+    = link_to @item.user.nickname, "#"
   です。
   %span
-    = link_to "#{@item.category}", "#"
+    = link_to @item.category, "#"
   の商品で、#{@item.prefecture.name}から#{@item.shipping_days}で発送されます。
   .item-main-content
     .item-photo
@@ -28,7 +28,7 @@
         %tr
           %th 出品者
           %td
-            = link_to "#{@item.user.nickname}", "#"
+            = link_to @item.user.nickname, "#"
             %span
               .item-user-ratings
                 %i.far.fa-grin
@@ -42,7 +42,7 @@
         %tr
           %th カテゴリー
           %td.item-detail-main-category
-            = link_to "#{@item.category}", "#"
+            = link_to @item.category, "#"
             .item-detail-table-sub-category
               = link_to "その他", "#"
             .item-detail-table-sub-sub-category
@@ -50,38 +50,42 @@
         %tr
           %th ブランド
           %td
-            = link_to "#{@item.brand}", "#"
+            = link_to @item.brand, "#"
         %tr
           %th 商品のサイズ
-          %td #{@item.size}
+          %td= @item.size
         %tr
           %th 商品の状態
-          %td #{@item.condition}
+          %td= @item.condition
         %tr
           %th 配送料の負担
-          %td #{@item.postage}
+          %td= @item.postage
         %tr
           %th 配送の方法
-          %td #{@item.shipping_method}
+          %td= @item.shipping_method
         %tr
           %th 配送元地域
-          %td
-            = link_to "#{@item.prefecture.name}", "#"
+          %td= link_to @item.prefecture.name, "#"
         %tr
           %th 発送日の目安
-          %td #{@item.shipping_days}
+          %td= @item.shipping_days
 
   .item-price-box.text-center
-    %span.item-price.bold ¥#{@item.price}
-    %span.item-tax (税込)
-    %span.item-shipping-fee #{@item.postage}
+    %span.item-price.bold
+      ¥
+      = @item.price
+    %span.item-tax
+      (税込)
+    %span.item-shipping-fee
+      = @item.postage
   - if user_signed_in? && current_user.id == @item.id
     = link_to "商品の編集", edit_item_path(@item), class: "item-buy-btn"
     = link_to 'この商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "item-buy-btn-gry"
   - else
     = link_to "購入画面に進む", item_purchase_index_path(@item.id), class: "item-buy-btn"
   .item-description
-  %p.item-description-inner #{@item.explain}
+  %p.item-description-inner
+    = @item.explain
 
   .item-button-container
     .item-button-container__left
