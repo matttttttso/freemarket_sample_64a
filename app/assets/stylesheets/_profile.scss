@@ -15,8 +15,7 @@
     }
 
     &__text{
-      width: 220px;
-      @include input-default(100%);
+      @include input-default(220px);
     }
   }
 
