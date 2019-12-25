@@ -5,8 +5,9 @@
         .header-up-content__logo
           = link_to image_tag('fmarket_logo_red.svg'), root_path
         .header-up-content__form
-          %input.header-up-content__form-area{ name: "keyword", placeholder: "何かお探しですか？", type: "search", value: "" }
-            %a.header-up-content__form-btn
+          = form_with url: '#', local: true do |f|
+            = f.label :search do
+              = f.text_field :search, name: "keyword", placeholder: "何かお探しですか？", type: "search", value: "", class: 'header-up-content__form-area'
               %i.fa.fa-search
       .header-bottom
         .left-header-bottom
