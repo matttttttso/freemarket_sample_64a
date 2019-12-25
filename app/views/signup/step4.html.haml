@@ -3,13 +3,13 @@
   .registration-contents
     %h2.single-head.bolb
       支払い方法
-    = form_with model: @user, local: true, url: done_signup_index_path, method: :get, class: 'registration-form' do |f|
+    = form_with model: @card, local: true, url: pay_signup_index_path, method: :post, name: 'inputForm', id: 'charge-form', novalidate: 'novalidate', class: 'registration-form' do |f|
       .registration-form__content
         = f.label :card_num, class: 'bolb' do
           カード番号
         %span.form-necessary
           必須
-        = f.text_field :card_num, placeholder: "半角数字のみ", class: 'input-text-field'
+        = f.text_field :card_number, id: 'card_number', placeholder: "半角数字のみ", maxlength: '19', class: 'input-text-field'
         = image_tag 'visa.svg', width: '49', height: '20'
         = image_tag 'master-card.svg', width: '34', height: '20'
         = image_tag 'saison-card.svg', width: '30', height: '20'
@@ -25,12 +25,12 @@
         .registration-form__content__division
           .select-wrap
             = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
-            = f.select :month, [*1..12], { prompt: "--" }, class: 'select-credit'
+            = f.select :exp_month, [["01",1], ["02",2], ["03",3], ["04",4], ["05",5], ["06",6], ["07",7], ["08",8], ["09",9], ["10",10], ["11",11], ["12",12]], {}, id: 'exp_month', class: 'select-credit'
           %span
             月
           .select-wrap
             = icon 'fas', 'chevron-down', class: 'select-wrap__icon'
-            = f.select :year, [*19..29], { prompt: "--" }, class: 'select-credit'
+            = f.select :exp_year,[["19",2019], ["20",2020], ["21",2021], ["22",2022], ["23",2023], ["24",2024], ["25",2025], ["26",2026], ["27",2027], ["28",2028], ["29",2029]], {}, id: 'exp_year', class: 'select-credit'
           %span
             年
       .registration-form__content
@@ -38,10 +38,11 @@
           セキュリティーコード
         %span.form-necessary
           必須
-        = f.text_field :code, placeholder: "カード背面4桁もしくは3桁の番号", class: 'input-text-field'
+        = f.text_field :cvc, id: 'cvc', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: '4', class: 'input-text-field'
         %p.text-right
           = link_to "#" do
             = icon 'fas', 'question-circle'
             カード裏面の番号とは？
-        = f.submit value: "次へ進む", class: "submit-btn"
+          #card_token
+        = f.submit '追加する', id: 'token_submit', class: "submit-btn"
   = render "/shared/sub-footer"
