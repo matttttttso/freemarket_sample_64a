@@ -1,4 +1,7 @@
 = render 'show/main_header'
+.box
+  - breadcrumb :profile
+  = breadcrumbs separator: " &rsaquo; "
 .mypage-wrapper
   = render 'mypage-side-bar'
   .mypage-main

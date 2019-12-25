@@ -1,6 +1,5 @@
 .header{
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  background-color: #FFF;
   position: relative;
   z-index: 3;
   display: block;
@@ -59,8 +58,11 @@
       box-sizing: border-box;
       -webkit-box-pack: justify;
       justify-content: space-between;
-      margin: 20px;
+      // margin: 20px;
       display: flex;
+      border-bottom: 1px solid #eee;
+      border-width: 100%;
+      // border-width: 0;
       .left-header-bottom{
         box-sizing: border-box;
         color: rgb(51, 51, 51);
@@ -127,5 +129,5 @@
         }
       }
     }
-  }
+  }       
 }

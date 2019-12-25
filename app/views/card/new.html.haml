@@ -1,5 +1,8 @@
 .wrapper
   = render 'show/main_header'
+  .box
+    - breadcrumb :new_card
+    = breadcrumbs separator: " &rsaquo; "
   .mypage-wrapper
     = render "users/mypage-side-bar"
     .mypage-main
