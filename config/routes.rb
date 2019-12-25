@@ -7,16 +7,6 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     delete :sign_out, to: 'devise/sessions#destroy'
-    
-  end
-  
-
-  # show_controller
-  resources :show do
-    collection do
-      get 'detail_content'
-      get 'creditcard-registration'
-    end
   end
 
   # signup_controller
@@ -50,12 +40,10 @@ Rails.application.routes.draw do
     end
   end
 
-
   # items_controller
   resources :items do
     collection do
       get 'sell'
-      get 'purchase'
     end
     
     resources :purchase, only: [:index] do
@@ -66,4 +54,5 @@ Rails.application.routes.draw do
       end
     end
   end
+
 end
