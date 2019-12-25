@@ -4,39 +4,38 @@
     %h2.single-head.bolb
       会員情報入力
     = form_with model: @user, local: true, url: step2_signup_index_path, method: 'GET', class: 'registration-form' do |f|
-      - if @omniauth.nil?
-        .registration-form__content
-          = f.label :nickname, class: 'bolb' do
-            ニックネーム
-          %span.form-necessary
-            必須
-          - if @user.errors.full_messages_for(:nickname).any?
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎", autofocus: true, class: 'input-text-field has-error'
-          - else
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎", autofocus: true, class: 'input-text-field'
-          = render partial: 'error-message', locals: { user: @user, column: "nickname" }
-        .registration-form__content
-          = f.label :email, class: 'bolb' do
-            メールアドレス
-          %span.form-necessary
-            必須
-          - if @user.errors.full_messages_for(:email).any?
-            = f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true, class: 'input-text-field has-error'
-          - else
-            = f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true, class: 'input-text-field'
-          = render partial: 'error-message', locals: { user: @user, column: "email" }
-        .registration-form__content
-          = f.label :password, class: 'bolb' do
-            パスワード
-          %span.form-necessary
-            必須
-          - if @user.errors.full_messages_for(:password).any?
-            = f.password_field :password, placeholder: "7文字以上の半角英数字", autofocus: true, class: 'input-text-field has-error'
-          - else
-            = f.password_field :password, placeholder: "7文字以上の半角英数字", autofocus: true, class: 'input-text-field'
-          = render partial: 'error-message', locals: { user: @user, column: "password" }
-          %p.registration-form__content__info-text
-            ※ 英字と数字の両方を含めて設定してください
+      .registration-form__content
+        = f.label :nickname, class: 'bolb' do
+          ニックネーム
+        %span.form-necessary
+          必須
+        - if @user.errors.full_messages_for(:nickname).any?
+          = f.text_field :nickname, placeholder: "例) メルカリ太郎", autofocus: true, class: 'input-text-field has-error'
+        - else
+          = f.text_field :nickname, placeholder: "例) メルカリ太郎", autofocus: true, class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "nickname" }
+      .registration-form__content
+        = f.label :email, class: 'bolb' do
+          メールアドレス
+        %span.form-necessary
+          必須
+        - if @user.errors.full_messages_for(:email).any?
+          = f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true, class: 'input-text-field has-error'
+        - else
+          = f.email_field :email, placeholder: "PC・携帯どちらでも可", autofocus: true, class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "email" }
+      .registration-form__content
+        = f.label :password, class: 'bolb' do
+          パスワード
+        %span.form-necessary
+          必須
+        - if @user.errors.full_messages_for(:password).any?
+          = f.password_field :password, placeholder: "7文字以上の半角英数字", autofocus: true, class: 'input-text-field has-error'
+        - else
+          = f.password_field :password, placeholder: "7文字以上の半角英数字", autofocus: true, class: 'input-text-field'
+        = render partial: 'error-message', locals: { user: @user, column: "password" }
+        %p.registration-form__content__info-text
+          ※ 英字と数字の両方を含めて設定してください
       .registration-form__content
         %p.registration-form__content__sub-head.bolb
           本人確認
