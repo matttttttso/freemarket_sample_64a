@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    # 仮設置
-    @items = Item.all.with_attached_images
+    @items = Item.includes(:user).order("created_at DESC").with_attached_images.limit(10)
   end
 
   def show

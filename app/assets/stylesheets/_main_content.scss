@@ -3,7 +3,7 @@
 }
 
 .main-content{
-  max-width: 1400px;
+  max-width: 1300px;
   padding: 0px;
   margin: 0px auto;
   &__text-area{
@@ -160,6 +160,7 @@
         margin-bottom: 16px;
         align-items: flex-end;
         display: flex;
+        flex-wrap: wrap;
         -webkit-box-pack: justify;
         justify-content: space-between;
         .ladies-new-item-top__left-text{
@@ -184,6 +185,7 @@
         .ladies-new-item-product__list{
           list-style: none;
           display: flex;
+          flex-wrap: wrap;
           width:100%;
           .ladies-new-item-product-list-item{
             display: inline-block;
@@ -197,11 +199,9 @@
             right: 0;
             top: 0;
             transition-timing-function: ease-in-out;
-            width: 100%;
             z-index: 1;
             transition-duration: .1s;
             position: relative;
-            flex-wrap: wrap;
             .ladies-new-item-product-image__price{
               align-items: center;
               background: rgba(0,0,0,.4);
@@ -236,6 +236,7 @@
           margin-bottom: 16px;
           align-items: flex-end;
           display: flex;
+          flex-wrap: wrap;
           -webkit-box-pack: justify;
           justify-content: space-between;
           .mens-new-item__top-left-text{

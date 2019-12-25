@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # root
-  root to: "show#index"
+  root to: "items#index"
 
   # devise
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
