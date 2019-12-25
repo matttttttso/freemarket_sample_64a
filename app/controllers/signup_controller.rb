@@ -65,6 +65,7 @@ class SignupController < ApplicationController
     session[:birthdate_year] = user_params[:birthdate_year]
     session[:birthdate_month] = user_params[:birthdate_month]
     session[:birthdate_day] = user_params[:birthdate_day]
+
     # 仮のインスタンスを作成しバリデーションの確認
     @user = User.new(
       nickname: session[:nickname],
