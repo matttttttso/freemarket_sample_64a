@@ -1,0 +1,99 @@
+= render "show/main_header"
+
+.item-box-container
+  .h1.item-name
+    = @item.item_name
+  %p.item-wording
+  #{@item.item_name}を出品したのは、
+  %span
+    = link_to "#{@item.user.nickname}", "#"
+  です。
+  %span
+    = link_to "#{@item.category}", "#"
+  の商品で、#{@item.prefecture.name}から#{@item.shipping_days}で発送されます。
+  .item-main-content
+    .item-photo
+      .item-photo__carousel
+        .item-photo__carousel__outer
+          - if @item.images.attached?
+            - @item.images.each do |image|
+              = image_tag image, class:"item-photo__carousel__outer"
+          .item-photo__carousel__outer__disabled
+        .outer-dots
+          .outer-dots__1
+            - @item.images.each.with_index do |image, i|
+              = image_tag image, class:"outer-dots__1"
+    %table.item-detail-table
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to "#{@item.user.nickname}", "#"
+            %span
+              .item-user-ratings
+                %i.far.fa-grin
+                %span 1
+              .item-user-ratings
+                %i.far.fa-frown
+                %span 0
+              .item-user-ratings
+                %i.far.fa-tired
+                %span 0
+        %tr
+          %th カテゴリー
+          %td.item-detail-main-category
+            = link_to "#{@item.category}", "#"
+            .item-detail-table-sub-category
+              = link_to "その他", "#"
+            .item-detail-table-sub-sub-category
+              = link_to "その他", "#"
+        %tr
+          %th ブランド
+          %td
+            = link_to "#{@item.brand}", "#"
+        %tr
+          %th 商品のサイズ
+          %td #{@item.size}
+        %tr
+          %th 商品の状態
+          %td #{@item.condition}
+        %tr
+          %th 配送料の負担
+          %td #{@item.postage}
+        %tr
+          %th 配送の方法
+          %td #{@item.shipping_method}
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "#{@item.prefecture.name}", "#"
+        %tr
+          %th 発送日の目安
+          %td #{@item.shipping_days}
+
+  .item-price-box.text-center
+    %span.item-price.bold ¥#{@item.price}
+    %span.item-tax (税込)
+    %span.item-shipping-fee #{@item.postage}
+  - if user_signed_in? && current_user.id == @item.id
+    = link_to "商品の編集", edit_item_path(@item), class: "item-buy-btn"
+    = link_to 'この商品を削除する', item_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "item-buy-btn-gry"
+  - else
+    = link_to "購入画面に進む", item_purchase_index_path(@item.id), class: "item-buy-btn"
+  .item-description
+  %p.item-description-inner #{@item.explain}
+
+  .item-button-container
+    .item-button-container__left
+      %button.item-button.item-button-like
+        %i.far.fa-heart
+        %span いいね!
+        %span.fade-in-down 5
+      %a.item-button-report
+        %i.fas.fa-flag
+        %span 不適切な商品の報告
+    .item-button-right
+      %i.fas.fa-user-lock
+      %span あんしん・あんぜんへの取り組み
+
+= render "show/main_footer"
