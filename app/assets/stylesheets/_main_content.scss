@@ -343,15 +343,16 @@
   text-align: center;
   z-index: 2;
   a{
+   
     text-decoration: none;
     display: block;
   }
   .top-seller-btn-link{
-    padding-top: 15px;
-    font-size: 35px;
+    padding-top: 25px;
+    font-size: 20px;
     text-align: center;
-    height: 200px;
-    width: 200px;
+    height: 160px;
+    width: 160px;
     background-color: rgb(234, 53, 45);
     border-radius: 50%;
     color: rgb(255, 255, 255);
@@ -362,4 +363,9 @@
       display: block;
     }
   }
+  .camera_icon{
+    margin: 0 auto;
+    height: 75px;
+  }
+  
 }
