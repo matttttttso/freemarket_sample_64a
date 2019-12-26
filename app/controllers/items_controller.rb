@@ -17,9 +17,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path, notice: '商品を編集しました'
-      # 詳細ページを作ったときに詳細ページに行くようにする
-      # redirect_to item_path(@item), notice: '商品を編集しました'
+      redirect_to item_path(@item), notice: '商品を編集しました'
     else
       render :edit
     end
