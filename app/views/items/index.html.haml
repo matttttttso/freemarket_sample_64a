@@ -217,14 +217,14 @@
 
   .top-seller-btn
     - if user_signed_in?
-      = link_to sell_items_path, class:"top-seller-btn-link" do
+      = link_to sell_items_path, class: "top-seller-btn-link" do
         出品
         %br
-        = image_tag('camera2.png')
+        = image_tag 'camera_icon.jpg', class: "camera_icon"
     - else
-      = link_to new_user_session_path, class:"top-seller-btn-link" do
+      = link_to new_user_session_path, class: "top-seller-btn-link" do
         出品
         %br
-        = image_tag('camera2.png')
+        = image_tag 'camera_icon.jpg', class: "camera_icon"
 
   = render 'show/main_footer'
